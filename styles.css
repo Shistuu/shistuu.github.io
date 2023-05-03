@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -20,12 +19,10 @@ body {
 
 .top-nav .title {
   font-size: 24px;
-  text-align:left;
+  text-align: left;
 }
-.top-nav .demo {
-  font-size: 24px;
-}
-.top-nav .code {
+
+.top-nav .demo .code {
   font-size: 24px;
 }
 
@@ -45,7 +42,8 @@ table {
   margin-top: 20px;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 10px;
   border-bottom: 1px solid #ccc;
@@ -65,8 +63,17 @@ td a {
 }
 
 td .demo-button {
-  background-color: purple;
+  background-color: rgb(137, 9, 137);
   color: white;
+}
+
+td .demo-button:hover {
+  background-color: #c62e2e
+}
+
+td .demo-button:active {
+  background-color: #bda4bb;
+  transform: translateY(4px);
 }
 
 td .code-button {
@@ -74,9 +81,23 @@ td .code-button {
   color: white;
 }
 
+td .code-button:hover {
+  background-color: #11529c;
+}
 
-tr:nth-child(even) {background: #CCC}
-tr:nth-child(odd) {background: #FFF}
-tr#heading{
-background: #428c5d;
+td .code-button:active {
+  background-color: #11529c;
+  transform: translateY(4px);
+}
+
+tr:nth-child(even) {
+  background: #CCC
+}
+
+tr:nth-child(odd) {
+  background: #FFF
+}
+
+tr#heading {
+  background: #428c5d;
 }
