@@ -17,11 +17,6 @@ body {
   color: white;
 }
 
-.top-nav .title {
-  font-size: 24px;
-  text-align: left;
-}
-
 .top-nav .demo .code {
   font-size: 24px;
 }
@@ -41,9 +36,11 @@ table {
   width: 100%;
   margin-top: 20px;
 }
+tr#heading {
+  background: #428c5d;
+}
 
-th,
-td {
+th, td {
   text-align: left;
   padding: 10px;
   border-bottom: 1px solid #ccc;
@@ -98,6 +95,3 @@ tr:nth-child(odd) {
   background: #FFF
 }
 
-tr#heading {
-  background: #428c5d;
-}
