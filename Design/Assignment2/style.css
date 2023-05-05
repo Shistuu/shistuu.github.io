@@ -165,7 +165,7 @@ form input[type="text"],
 form input[type="tel"],
 form input[type="email"] {
   display: block;
-  width: 30%;
+  width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
@@ -186,7 +186,7 @@ form button[type="submit"] {
   margin: 10px;
   height: fit-content;
   width: 20%;
-  
+
 }
 
 form button[type="submit"]:hover {
@@ -201,6 +201,7 @@ footer {
   text-align: center;
   padding: 1rem;
   position: relative;
+
 }
 
 footer:before {
@@ -224,7 +225,6 @@ footer p {
 .mainbody {
   position: relative;
   top: 58px;
-  /* height: 100vh; */
 }
 
 .fa {
@@ -234,6 +234,7 @@ footer p {
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
+
 }
 
 .fa:hover {
@@ -243,6 +244,7 @@ footer p {
 .fa-facebook {
   background: #3B5998;
   color: white;
+
 }
 
 .fa-google {
@@ -254,20 +256,29 @@ footer p {
   background: #be7531;
   color: white;
 }
-.life{
+
+.life {
   text-align: center;
   padding: 20px;
   margin: 10px;
 }
-.purpose{
+
+.purpose {
   text-align: center;
   padding: 20px;
   margin: 10px;
- 
+
 }
-.conscious{
+
+.conscious {
   text-align: center;
   padding: 20px;
   margin: 10px;
- 
+}
+
+.wrapper {
+  padding: 50px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
 }
