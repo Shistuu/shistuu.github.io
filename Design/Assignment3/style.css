@@ -74,8 +74,6 @@ nav ul li a:hover {
   margin-bottom: 50px;
   width: 100vw;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .horizontal-layout a {
@@ -85,12 +83,11 @@ nav ul li a:hover {
 }
 
 .horizontal-layout_img {
-  width: calc(33.33% - 4px);
   margin: 2px;
   transition: transform 0.3s ease-in-out;
   padding: 15px;
   display: flex;
-  justify-content: center;
+
   align-items: center;
 }
 
@@ -99,6 +96,7 @@ nav ul li a:hover {
   border-radius: 2px;
   width: 100%;
   object-fit: cover;
+ 
 }
 
 .horizontal-layout_img:hover {
@@ -180,16 +178,69 @@ table th {
   padding: 10px;
 }
 
-form input[type="text"],
+/* form input[type="text"],
 form input[type="tel"],
 form input[type="email"] {
   width: 100%;
-}
+} */
 
 form button[type="submit"] {
   width: 100%;
 }
 
+::placeholder {
+  color: #b0b0b0;
+  text-align: left;
+  padding: 10px;
+}
+
+footer {
+  background-color: #191970;
+  background-image: linear-gradient(to left, #d19618, #e7e8ea);
+  color: white;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  text-align: center;
+}
+
+.mainbody {
+  position: relative;
+  top: 50px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  flex-direction: row-reverse;
+
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-instagram {
+  background: #be7531;
+  color: white;
+}
 .life {
   display: flex;
   flex-wrap: wrap;
@@ -218,4 +269,59 @@ form button[type="submit"] {
   justify-content: center;
   margin: auto;
   text-align: center;
+}
+
+.fa-icons__container{
+  display: flex;
+}
+
+form {
+  box-sizing: border-box;
+
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin: 10px;
+  padding: 5px;
+
+}
+
+form input[type="text"],
+form input[type="tel"],
+form input[type="email"] {
+  display: block;
+  width: 50vw;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #aba8a8;
+  text-align: center;
+
+}
+
+::placeholder {
+  color: #b0b0b0;
+  text-align: left;
+  padding: 10px;
+}
+
+form button[type="submit"] {
+  background-color: #ecaf20;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 10px;
+  height: fit-content;
+  width: 20%;
+
+}
+
+form button[type="submit"]:hover {
+  background-color: #807f7c;
+
 }

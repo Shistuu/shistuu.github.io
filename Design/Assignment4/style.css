@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+    background-color: rgb(189, 202, 219);
+}
+
+nav {
+    background: linear-gradient(96.22deg, #043CAA -0.66%, rgba(4, 60, 170, 0.86) 44.05%, rgba(4, 60, 170, 0) 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+    flex-grow: 5;;
+  }
+  
+  nav ul li a {
+    display: block;
+    padding: 0 10px;
+    line-height: 50px;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  nav ul li a:hover {
+    transition: color 0.3s ease;
+    color: rgb(104, 104, 104);
+  }
+
+.rectangle1 {
+    position: absolute;
+    width: 1440px;
+    height: 500px;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+.rectangle2 {
+    position: absolute;
+    width: 483px;
+    height: 500px;
+    left: 909px;
+    top: 175px;
+}
+.login-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 25px;
+  width: 90px;
+  cursor: pointer;
+  margin-top: 5px;
+
+}
