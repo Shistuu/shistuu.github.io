@@ -4,7 +4,7 @@
 }
 
 .rectangle1 {
-    background-color: #f2f2f2;
+    background-color: E5E5E5;
     background-image: url("r2.png");
     background-size: cover;
     background-position: center;
@@ -469,7 +469,6 @@ nav ul li a:hover {
     color: green;
     border-radius:  20px 0 20px 10;
     border: none;
-    padding: 5px 10px;
   cursor: pointer;
   }
   
@@ -524,6 +523,67 @@ nav ul li a:hover {
     margin-bottom: 10px;
   }
   
+  footer{
+    background-color: #043CAA;
+    color: white;
+  }
+  .container{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .flexBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .content p{
+    max-width: 400px;
+    margin-top: 18px;
+  }
+
+  .lists{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright{
+    text-align: center;
+  }
   
+  .emailPart btn{
+    background-color: #7A7A7A;
+    border-radius: 50px;
+    width: 400px;
+  }
+
+  .emailPart input{
+    border: none;
+    padding: 12px 26px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+
+  .emailPart button {
+    border: none;
+    padding: 12px 26px;
+    background-color: #1BC768;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+  }
+  
+  imgDiv img{
+    width: 100px;
+    height: 100px;
+  }
+
+  .express{
+    max-width: 400px;
+    margin-top: 18px;
+  }
+  
+
   
   
