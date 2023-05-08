@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+.rectangle1 {
+    background-color: #f2f2f2;
+    background-image: url("r2.png");
+    background-size: cover;
+    background-position: center;
+  }
+  
+
 body {
     font-size: 18px;
     line-height: 1.5;
@@ -11,7 +19,7 @@ body {
 }
 
 nav {
-    background: linear-gradient(96.22deg, #043CAA -0.66%, rgba(4, 60, 170, 0.86) 44.05%, rgba(4, 60, 170, 0) 100%);
+    background: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -24,6 +32,11 @@ nav ul {
     padding: 0;
     list-style: none;
     display: flex;
+    justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
 }
 
 nav ul li {
@@ -45,6 +58,7 @@ nav ul li a:hover {
     transition: color 0.3s ease;
     color: rgb(104, 104, 104);
 }
+
 
 .rectangle1 {
     position: relative;
@@ -326,5 +340,190 @@ nav ul li a:hover {
     width: 10%;
 }
 
+.body h3{
+    color: #043CAA;
+    text-align: center;
+    padding: 30px;
+    margin-top: 30px;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+.body img{
+    display: block; 
+    margin: 0 auto;
+}
 
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .left-content {
+    flex: 1;
+    text-align: left;
+    margin-right: 20px;
+  }
+  
+  .left-content h4 {
+    margin-left: 200px;
+    color: #043CAA;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .left-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .left-content ul li {
+    margin-bottom: 5px;
+    margin-left: 200px;
+    margin-top: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
+  
+  .rounded-button {
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #1BC768;
+    padding: 10px 20px;
+    border: 2px solid #1BC768;
+    cursor: pointer;
+    margin-left: 200px;
+    margin-top: 10px;
+  }
+  
+  .right-content {
+    flex: 1;
+  }
+  
+  .right-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .clients {
+    display: flex;
+    align-items: center;
+  }
+
+  .clients img {
+    margin-right: 20px;
+  }
+
+  .clients h2 {
+    margin-bottom: 10px;
+    margin-left: 220px;
+    text-align: center;
+  }
+
+  .clients p {
+    margin: 30px 20px 0px 240px;
+    color: gray;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .clients h6 {
+    margin-top: 30px;
+    margin-left: 240px;
+    color: #043CAA;
+    font-size: 20px;
+  }
+  
+
+  .footer {
+    background-color: #043CAA;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    margin-top: 100px;
+  }
+  
+  .newsletter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .newsletter p {
+    margin-right: 10px;
+  }
+  
+  .search_text {
+    margin-right: 10px;
+  }
+  
+  .button {
+    background-color: white;
+    color: green;
+    border-radius:  20px 0 20px 10;
+    border: none;
+    padding: 5px 10px;
+  cursor: pointer;
+  }
+  
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .company {
+    align-self: flex-start;
+    text-align: left;
+    margin-right: 20px;
+  }
+  
+  .links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .quick-links,
+  .services,
+  .social-media {
+    flex-basis: calc(33.33% - 20px);
+    text-align: center;
+  }
+  
+  .quick-links {
+    margin-right: 20px;
+  }
+  
+  .social-media {
+    margin-left: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    margin-bottom: 5px;
+  }
+  
+  p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  
+  
+  
