@@ -72,6 +72,20 @@ nav ul li {
 
 }
 
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #ffffff;
+}
+
 nav ul div:nth-child(1) li a {
   font-size: 22px;
   line-height: 35px;
@@ -106,7 +120,6 @@ nav ul li a:hover {
   object-fit: contain;
 }
 
-
 .title {
   width: 519px;
   height: 120px;
@@ -130,8 +143,6 @@ nav ul li a:hover {
   color: #FFFFFF;
   margin-bottom: 34px;
   padding-left: 10px 0px 0px 20px;
-
-
 }
 
 .login-button {
@@ -329,12 +340,12 @@ nav ul li a:hover {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
-
 }
 
 .clients img {
   width: 400px;
   height: auto;
+
 }
 
 .clients h2 {
@@ -569,7 +580,6 @@ footer {
     text-align: center;
   }
 
-
   footer {
     padding: 40px;
   }
@@ -627,5 +637,38 @@ footer {
 
   footer {
     padding: 20px;
+  }
+}
+
+@media (min-width:768px) and (max-width:1024px) {
+  .imgDiv {
+    width: 50%;
+    padding-right: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .hamburger {
+    display: block;
+    padding-right: 20px;
+    padding-top: 10px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
   }
 }
