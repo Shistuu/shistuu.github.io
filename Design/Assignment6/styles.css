@@ -5,6 +5,9 @@
   box-sizing: border-box;
 }
 
+img{
+  max-width: 100%;
+}
 nav {
   position: absolute;
   top: 0;
@@ -43,7 +46,7 @@ nav ul li {
 
 .stay-img {
   position: relative;
-  padding-right: 20px;
+  padding-right: 50px;
 }
 
 .pic1,
@@ -157,11 +160,9 @@ nav ul li a:hover {
   list-style: none;
   text-align: right;
   line-height: 1.2;
-
 }
-.fa-greater-than{
+.fa-greater-than {
   color: #ffffff;
-
 }
 
 .headlist li {
@@ -202,14 +203,22 @@ nav ul li a:hover {
 
 .desc {
   display: flex;
+  width: 100%;
   justify-content: space-around;
+}
+.serv-container {
+  max-width: 20rem;
 }
 
 .serv {
+  /* display: flex; */
+  flex: 1;
+  flex-wrap: wrap;
   padding-left: 10%;
   margin-top: 6%;
-  max-width: 45%;
+  /* max-width: 45%; */
 }
+
 .desc .stay-img {
   padding-left: 10%;
   margin-top: 2%;
@@ -217,7 +226,6 @@ nav ul li a:hover {
 
 .container {
   width: 100%;
-  height: 81vh;
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
@@ -235,16 +243,21 @@ nav ul li a:hover {
   font-weight: 500;
   font-size: 14px;
   color: #a9a9a9;
+  text-align: center;
 }
 .container-maintext {
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
+  text-align: center;
+}
+.bed {
+  object-fit: cover;
 }
 
-/* .container img{
+.container img{
   padding: 40px;
-} */
+}
 
 .About-us {
   height: 100vh;
@@ -255,19 +268,27 @@ nav ul li a:hover {
   align-items: center;
   padding-left: 10%;
 }
+.cafe {
+  width: 100%;
+  object-fit: cover;
+}
 
 .about-head {
   font-size: 2rem;
 }
 .about-picture {
   height: 100%;
+  flex: 1;
+}
+.about-content {
+  flex: 1;
 }
 .about-picture img {
   height: 100%;
 }
 .about-para {
   color: grey;
-  width: 350px;
+  max-width: 350px;
   line-height: 2;
 }
 .classic-room {
@@ -279,7 +300,6 @@ nav ul li a:hover {
 .classic-room-left {
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
   row-gap: 35px;
 }
 .classic-room-left h2 {
@@ -288,6 +308,8 @@ nav ul li a:hover {
 }
 .classic-room-right {
   margin-top: -155px;
+  margin-right: 90px;
+  text-align: center;
 }
 
 .star {
@@ -308,23 +330,23 @@ nav ul li a:hover {
 .e5 {
   position: absolute;
 }
-.e2{
+.e2 {
   z-index: 2;
   left: 40px;
 }
-.e3{
+.e3 {
   z-index: 3;
   left: 80px;
 }
-.e4{
+.e4 {
   z-index: 4;
   left: 120px;
 }
-.e5{
+.e5 {
   z-index: 5;
   left: 160px;
 }
-.reviews{
+.reviews {
   padding-top: 60px;
 }
 
@@ -374,6 +396,7 @@ nav ul li a:hover {
 .card-wrapper {
   display: flex;
   width: 100%;
+  /* gap: 5rem; */
 }
 .card {
   margin-bottom: 40px;
@@ -389,7 +412,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 55px;
+  padding-top: 45px;
 }
 
 .container-foot {
@@ -410,6 +433,8 @@ footer {
 
 .emailbtn {
   display: flex;
+  padding: 50px;
+  margin-left: -40px;
 }
 
 .emailPart input {
@@ -492,23 +517,65 @@ p {
   justify-content: center;
 }
 
-.copyright-icon{
-  /* display: flex;
-  justify-content: right; */
-  /* float: right; */
-}
-/* 
-@media (max-width:1024px) {
-  .nav-img{
+@media (max-width: 1357px) {
+  .desc {
+    flex-direction: column;
+    margin-bottom: 10rem;
+  }
+  .stay-img {
+    display: flex;
+    justify-content: center;
+  }
+  .serv {
+    display: flex;
+    justify-content: center;
+  }
+  .pic4 {
     display: none;
   }
+  .pic1 {
+    left: 10vw;
+  }
+}
 
+@media (max-width: 1273px) {
+  .classic-room {
+    flex-direction: column;
+    height: fit-content;
+    margin: 5rem 0;
+    gap: 10rem;
+  }
+}
+
+@media (max-width: 1061px) {
+  .container {
+    flex-direction: column;
+    height: fit-content;
+    gap: 2rem;
+  }
+  .container-left-image,
+  .container-right-image {
+    flex-direction: row;
+    justify-content: center;
+    gap: 5rem;
+  }
+  .container-middle-image {
+    display: flex;
+    justify-content: center;
+  }
+  
+}
+@media (max-width: 991px) {
   .rectangle1 {
     padding-left: 0px;
     padding-right: 0px;
     justify-content: center;
     align-items: center;
     text-align: center;
+  }
+  .head-cont {
+    display: flex;
+    flex-direction: column;
   }
 
   nav ul {
@@ -528,16 +595,34 @@ p {
   }
 }
 
-@media (max-width:768px) {
+@media (max-width: 767px) {
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  .card-wrapper {
+    flex-direction: column;
+  }
+/*   
+  .classic-room {
+    height: 190vh;
+  } */
+  .card:last-child {
+    margin-left: 0;
+  }
+
   nav ul div {
     flex-direction: column;
   }
- 
-  .hotel-fac {
-    float:none;
-    grid-template-columns: 1fr;
-  
-}
 
   nav ul {
     padding-left: 0;
@@ -556,10 +641,44 @@ p {
     align-items: center;
     text-align: center;
   }
+
+  .hamburger {
+    display: block;
+    padding-right: 20px;
+    padding-top: 10px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
-@media (max-width:480px) {
+@media (max-width: 731px) {
+  .container {
+    flex-direction: column;
+    height: fit-content;
+    gap: 2rem;
+  }
+  .container-left-image,
+  .container-right-image {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
+  .container-middle-image {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width:511px) {
+  .pic2,.pic3{
+    left: 1vw;
+  }  
+}
 
+@media (max-width: 479px) {
   nav ul {
     flex-direction: column;
     justify-content: center;
@@ -583,41 +702,75 @@ p {
   .frame4 {
     justify-content: center;
   }
+  .classic-room-left h2 {
+    font-size: 1.5rem;
+  }
 
   footer {
-    padding: 20px;
+    padding-top: 30px;
   }
+  
+  .container-foot {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  
+  .footer-upper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .emailPart {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .emailbtn {
+    flex-direction: column;
+    padding: 0;
+    margin-left: 0;
+  }
+  
+  .emailPart input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .footer-links {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .footer-right-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .footer-lower {
+    margin-top: 20px;
+  }
+  
+  .copyright {
+    font-size: 0.6rem;
+    text-align: center;
+  }
+  
+  .fa-brands {
+    display: block;
+    margin: 10px auto;
+  }
+
+  
 }
 
-@media (min-width:768px) and (max-width:1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .imgDiv {
     width: 50%;
     padding-right: 20px;
   }
 }
-
-@media only screen and (max-width: 768px) {
-  .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 5rem;
-    flex-direction: column;
-    background-color: #fff;
-    width: 100%;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-  }
-
-  .hamburger {
-    display: block;
-    padding-right: 20px;
-    padding-top: 10px;
-  }
-
-  nav {
-    display: flex;
-    justify-content: space-between;
-  }
-} */
