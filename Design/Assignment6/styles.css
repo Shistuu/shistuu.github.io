@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-img{
+img {
   max-width: 100%;
 }
 nav {
@@ -255,7 +255,7 @@ nav ul li a:hover {
   object-fit: cover;
 }
 
-.container img{
+.container img {
   padding: 40px;
 }
 
@@ -374,20 +374,12 @@ nav ul li a:hover {
   max-width: 1200px;
   height: 554px;
 }
-
-.hotel-fac {
-  display: flex;
-  width: 714px;
-  height: 520px;
-  left: 428px;
-}
-
 .card {
   padding: 20px;
   width: 340px;
   box-shadow: -14px 24px 68px -16px rgba(0, 0, 0, 0.12);
   background-color: white;
-  margin-right: -90px;
+  margin-right: -10px;
 }
 
 .card-wrapper :hover {
@@ -398,7 +390,8 @@ nav ul li a:hover {
 .card-wrapper {
   display: flex;
   width: 100%;
-  gap: 5rem;
+  /* row-gap: 5rem;
+  column-gap: 1rem; */
 }
 .card {
   margin-bottom: 40px;
@@ -471,13 +464,25 @@ p {
   color: #888888;
   margin-bottom: 20px;
   margin-top: 20px;
-
 }
 
 .right {
   padding-left: 10em;
 }
+.fa-twitter:before{
+  margin: 5px;
+  padding: 5px;
 
+}
+.fa-facebook:before{
+  margin: 5px;
+  padding: 5px;
+}
+.fa-youtube:before{
+  margin: 5px;
+  padding: 5px;
+
+}
 .fa-brands .fa-twitter {
   margin-bottom: 34px;
   margin-right: 5px;
@@ -509,13 +514,19 @@ p {
   margin-bottom: 25px;
 }
 .copyright-logo {
-  max-width: 1200px;
+  max-width: 700px;
   margin: 0 auto;
   display: flex;
-  width: 50%;
+  flex-direction: row;
+  align-items: center;
 }
-.copyright {
-  font-size: 0.7rem;
+.copyright-icon{
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+}
+.copyright-logo .copyright {
+  font-size: 1rem;
   color: #9d9d9d;
   display: flex;
   justify-content: center;
@@ -567,7 +578,6 @@ p {
     display: flex;
     justify-content: center;
   }
-  
 }
 @media (max-width: 991px) {
   .rectangle1 {
@@ -597,12 +607,14 @@ p {
   footer {
     padding: 40px;
   }
-  .pic3{
+  .pic3 {
     bottom: -60px;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+
+
   .nav-menu {
     position: fixed;
     left: -100%;
@@ -618,11 +630,8 @@ p {
 
   .card-wrapper {
     flex-direction: column;
+    margin-left:60px;
   }
-/*   
-  .classic-room {
-    height: 190vh;
-  } */
   .card:last-child {
     margin-left: 0;
   }
@@ -642,13 +651,6 @@ p {
     margin-right: 0;
   }
 
-  .lists {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
   .hamburger {
     display: block;
     padding-right: 20px;
@@ -659,7 +661,21 @@ p {
     display: flex;
     justify-content: space-between;
   }
-  
+
+  .headlist li {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .fa-solid.fa-greater-than.fa-xs {
+    display: none;
+  }
+
+  .rightlist {
+    margin-top: 20px;
+    padding-right: 0;
+  }
 }
 
 @media (max-width: 731px) {
@@ -679,17 +695,16 @@ p {
     display: flex;
     justify-content: center;
   }
-
 }
-@media (max-width:511px) {
- .pic3{
+@media (max-width: 511px) {
+  .pic3 {
     left: 11vw;
     bottom: -57px;
-  }  
+  }
   p {
     font-size: 10px;
   }
-  .line{
+  .line {
     width: 150px;
   }
 }
@@ -725,63 +740,61 @@ p {
   footer {
     padding-top: 30px;
   }
-  
+
   .container-foot {
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 0;
   }
-  
+
   .footer-upper {
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding-bottom: 30px;
   }
-  
+
   .emailPart {
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
   }
-  
+
   .emailbtn {
     flex-direction: column;
     padding: 0;
     margin-left: 0;
   }
-  
+
   .emailPart input {
     width: 100%;
     margin-bottom: 10px;
   }
-  
+
   .footer-links {
     margin-bottom: 20px;
     text-align: center;
   }
-  
+
   .footer-right-link {
     text-align: center;
     margin-top: 20px;
   }
-  
+
   .footer-lower {
     margin-top: 20px;
   }
-  
+
   .copyright {
     font-size: 0.6rem;
     text-align: center;
   }
-  
+
   .fa-brands {
     display: block;
     margin: 10px auto;
   }
-
-  
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
