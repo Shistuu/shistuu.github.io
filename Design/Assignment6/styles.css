@@ -142,6 +142,13 @@ nav ul li a:hover {
   font-size: 16px;
   cursor: pointer;
   margin-top: 5px;
+  cursor: pointer;
+}
+.book-button:hover {
+  transition-duration: 0.4s;
+  background-color: #c5bebe;
+  color: white;
+
 }
 
 .head-cont {
@@ -157,11 +164,31 @@ nav ul li a:hover {
 .headlist {
   color: white;
   text-decoration: underline;
+  text-underline-offset: 20px;
   list-style: none;
   text-align: right;
   line-height: 1.2;
 }
+
+.headlist a{
+  color: #ffffff;
+}
+.headlist a:link{
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.headlist a:hover {
+  color: rgb(118, 117, 117);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
 .fa-greater-than {
+  text-decoration: underline;
+  text-underline-offset: 22px;
   color: #ffffff;
 }
 
@@ -667,7 +694,11 @@ p {
     text-align: center;
     padding: 10px 0;
   }
+.fa-xs{
+  font-size: 0.75em;
+  line-height: 1em;
 
+}
   .fa-solid.fa-greater-than.fa-xs {
     display: none;
   }
@@ -751,12 +782,11 @@ p {
   .footer-upper {
     flex-direction: column;
     align-items: center;
-    text-align: center;
     padding-bottom: 30px;
   }
 
   .emailPart {
-    margin-top: 20px;
+    margin-top: -10px;
     margin-bottom: 20px;
     text-align: center;
   }
