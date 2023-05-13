@@ -1,0 +1,1 @@
+//Write a program to normalize a given input to get the expected output.
