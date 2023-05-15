@@ -1,21 +1,19 @@
-// Write a function that transforms an array of inputs into a new array based on a provided
-//transformation function.
+//Also try searchByKey(fruits, 'name', 'apple');
 
-
-//var numbers = [1, 2, 3, 4];
-//function transform(collection, tranFunc) { …TODO }
-//var output = transform(numbers, function(num) {
-//return num * 2;});
-// output should be [2, 4, 6, 8]
-
-var numbers = [1, 2, 3, 4];
-
-function transform(collection, tranFunc) {
-  return collection.map(tranFunc);
+function searchByKey(arr, key, value)
+{
+    for( var i=0;i<arr.length;i++)
+    {
+        if(arr[i][key].toLowerCase()===value.toLowerCase())
+        return arr[i];
+    }
+    return null;
 }
 
-var output = transform(numbers, function (num) {
-  return num * 2;
-});
+var fruits=[
+    {id: 1, name: 'Banana', color: 'Yellow'},
+    {id: 2, name: 'Apple', color: 'Red'}
+  ];
 
-console.log(output); 
+  var ans=searchByKey(fruits, 'name', 'apple');
+  console.log(ans);
