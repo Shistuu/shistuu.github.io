@@ -1,15 +1,18 @@
 //Write a program to normalize a given input to get the expected output.
 
-var input = {
+var input = 
+{
     '1': {
       id: 1,
       name: 'John',
-      children: [
+      children: 
+      [
         { id: 2, name: 'Sally' },
         { id: 3, name: 'Mark', children: [{ id: 4, name: 'Harry' }] }
       ]
     },
-    '5': {
+    '5': 
+    {
       id: 5,
       name: 'Mike',
       children: [{ id: 6, name: 'Peter' }]
@@ -18,15 +21,18 @@ var input = {
   
   var output = {};
   
-  function normalize(person) {
-    var normalized = {
+  function normalize(person) 
+  {
+    var normalized = 
+    {
       id: person.id,
       name: person.name,
       children: []
     };
   
     if (person.children) {
-      for (var i = 0; i < person.children.length; i++) {
+      for (var i = 0; i < person.children.length; i++) 
+      {
         var child = person.children[i];
         normalized.children.push(child.id);
         normalize(child);
@@ -36,7 +42,8 @@ var input = {
     output[normalized.id] = normalized;
   }
   
-  for (var key in input) {
+  for (var key in input) 
+  {
     normalize(input[key]);
   }
   
