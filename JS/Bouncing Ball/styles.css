@@ -1,0 +1,25 @@
+body {
+	margin: 0;
+	padding: 30px;
+	background-image: url(Bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+#container {
+	position: relative;
+	width: 500px;
+	height: 470px;
+	border: 5px solid #a5a5a5;
+	overflow: hidden;
+	margin-left: 600px;
+	padding: 10px;
+}
+
+  .ball {
+	position: absolute;
+	background-color: #e2e2e2;
+	border-radius: 50%;
+  }
+  
