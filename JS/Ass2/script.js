@@ -36,6 +36,11 @@ document.addEventListener("DOMContentLoaded", function()
         showImage(index);
       });
     });
+
+    setInterval(function() {
+      currImgIndex = (currImgIndex + 1) % images.length;
+      updateCarousel();
+    }, 3000);
   
     updateCarousel();
   });
