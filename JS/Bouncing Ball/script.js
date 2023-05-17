@@ -87,7 +87,7 @@ function init() {
     ball.moveBall(); //moves the position of the ball
   }
 
-  setTimeout(init, 25); //ball movement and collision detection are continously updated 
+  setTimeout(init, 20); //ball movement and collision detection are continously updated 
 }
 
 for (let i = 0; i < ballCount; i++) {
