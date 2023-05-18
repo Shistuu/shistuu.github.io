@@ -41,8 +41,8 @@ class Ant {
     scoreContainer.textContent = "Your Score: " + score;
     const blood = document.createElement("div");
     blood.className = "blood";
-    blood.style.width = this.size * 2 + "px"; // Increase the blood size
-    blood.style.height = this.size * 2 + "px"; // Increase the blood size
+    blood.style.width = this.size * 3 + "px"; // Increase the blood size
+    blood.style.height = this.size * 3 + "px"; // Increase the blood size
     blood.style.left = this.x - this.size / 2 + "px"; // Center the blood position
     blood.style.top = this.y - this.size / 2 + "px"; // Center the blood position
     document.getElementById("container").appendChild(blood);
