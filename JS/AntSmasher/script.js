@@ -38,7 +38,7 @@ class Ant {
       
         setTimeout(() => {
           blood.remove();
-        }, 1500); // Adjust the duration as desired (in milliseconds)
+        }, 1000); // Adjust the duration as desired (in milliseconds)
       } 
       
   }
@@ -69,7 +69,7 @@ class Ant {
     for (let i = 0; i < ants.length; i++) {
       const ant = ants[i];
   
-      if (ant.x <= 0 || ant.x + ant.size >= 480) {
+      if (ant.x <= 0 || ant.x + ant.size >= 780) {
         ant.dx *= -1;
       }
   
