@@ -49,4 +49,19 @@ body {
     width: 400px;
     height: 400px;
   }
+  #score-container {
+    background-color: #ffa600;
+    padding: 10px;
+    border: solid black;
+    display: inline-block;
+    margin-left: 520px;
+  }
   
+  #score {
+    font-weight: bold;
+  }
+  
+  #score-container.hover-effect:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+  }
