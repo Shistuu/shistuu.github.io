@@ -36,7 +36,7 @@ body {
   
   .ant {
     position: absolute;
-    background-image: url(ant.png);
+    background-image: url(ant.gif);
     background-size: contain;
     width: 40px;
     height: 40px;
