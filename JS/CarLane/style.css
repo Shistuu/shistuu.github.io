@@ -25,13 +25,15 @@
   }
   
   .lines {
-    width: 10px;
-    height: 100px;
-    background: white;
+    width: 7px;
+    height: 55px;
+    margin: 20px; ;
+    background: rgb(255, 225, 1);
     position: absolute;
-    margin-left: 145px;
+    margin-left: 150px;
+
   }
-  
+
   .gameArea {
     width: 300px;
     background: #2d3436;
@@ -47,7 +49,7 @@
     top: 35px;
     right: 35px;
     background: #000000;
-    color: white;
+    color: rgb(255, 255, 255);
     width: 200px;
     height: 70px;
     text-align: center;
@@ -55,11 +57,11 @@
   }
   .gameStart {
     position: absolute;
-    background-color: #eace1c;
+    background-color: #66edce;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: rgb(0, 0, 0);
     z-index: 1;
     text-align: center;
     border: 4px solid #000000;
