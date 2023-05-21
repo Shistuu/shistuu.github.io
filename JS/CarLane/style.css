@@ -5,6 +5,7 @@
   
   body {
     overflow-y: hidden;
+    background-color: rgb(119, 181, 24);
   }
   
   .hide {
@@ -24,6 +25,16 @@
     background-position: center;
   }
   
+  .bullet {
+    width: 18px;
+    height: 36px;
+    position: absolute;
+    background-image: url(bullet.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
   .lines {
     width: 7px;
     height: 55px;
