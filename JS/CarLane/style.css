@@ -78,16 +78,16 @@
   }
   .gameStart {
     position: absolute;
-    background-color: #66edce;
+    background-color: #787878;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     z-index: 1;
     text-align: center;
-    border: 4px solid #000000;
+    border: 2px solid black;
     margin: auto;
     font-size: 18px;
-    width: 300px;
+    width: 290px;
   }
   
