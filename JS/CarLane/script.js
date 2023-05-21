@@ -268,8 +268,7 @@ window.onload = () => {
       if (isCollide(car, item)) {
         endGame();
         gameStart.innerHTML =
-          "Oops! Game Over!! Your current score is " +
-          player.score + "." +
+          "Oops! Game Over!!" +
           "<br>" +
           " Click here to play again! ";
         item.style.display = "none";
