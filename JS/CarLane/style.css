@@ -1,0 +1,43 @@
+/* *{
+  margin: 0;
+  padding: 0;
+
+}
+
+.hide{
+  display: none;
+}
+.lines{
+  width: 10px;
+  height: 100px;
+  background: white;
+  position: absolute;
+  margin-left: 295px;
+}
+
+.gamearea{
+  width: 600px;
+  background: #2d3436;
+  height: 900px;
+  margin: auto;
+  position: relative;
+  border-right: 7px dashed #c8d6e5;
+  border-left: 7px dashed #c8d6e5;
+   
+
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  background-color: #aaaaaa;
+}
