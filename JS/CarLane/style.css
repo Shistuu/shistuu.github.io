@@ -34,6 +34,16 @@
     background-size: cover;
     background-position: center;
   }
+.boom {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  background-image: url('boom.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 2; /* Ensure the boom appears between the cars */
+}
 
   .lines {
     width: 7px;
