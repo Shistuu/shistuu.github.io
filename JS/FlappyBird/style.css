@@ -1,0 +1,24 @@
+html { 
+    background: url("background.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+body {
+  text-align: center;
+  user-select: none;
+
+}
+header {
+  margin: 0 auto;
+}
+h1 {
+ 
+  padding: 1.2rem 0;
+}
+.score-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 6px
+}
