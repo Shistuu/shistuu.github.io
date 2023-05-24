@@ -95,9 +95,9 @@ class FlappyBird {
     } else {
       this.ctx.drawImage(this.img, 432, Math.floor((this.index % 9) / 3) * this.size[1], ...this.size, ((this.canvas.width / 2) - this.size[0] / 2), this.flyHeight, ...this.size);
       this.flyHeight = (this.canvas.height / 2) - (this.size[1] / 2);
-      this.ctx.fillText(`Your best score: ${this.bestScore}`, 35, 245);
-      this.ctx.fillText('Press space to play', 30, 535);
-      this.ctx.font = "bold 30px courier";
+      this.ctx.fillText(`Your best score: ${this.bestScore}`, 85, 245);
+      this.ctx.fillText('Please press space to play!', 50, 535);
+      this.ctx.font = "bold 30px Times";
     }
 
     document.getElementById('bestScore').innerHTML = `Best: ${this.bestScore}`;
