@@ -1,50 +1,96 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  font-family: Arial;
-}
-
 body {
+  height: 100vh;
+  margin: 0;
+  font-size: 40px;
   background-color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-size: 7.5vmin;
+  
 }
 
-#game-board {
+#container{
   display: grid;
   grid-template-columns: repeat(var(--grid-size), var(--cell-size));
   grid-template-rows: repeat(var(--grid-size), var(--cell-size));
   background-color: #000000;
   gap: var(--cell-gap);
-  border-radius: 1vmin;
   padding: var(--cell-gap);
   position: relative;
 }
 
 .cell {
-  background-color: #444444;
-  border-radius: 1vmin;
+  background-color: #c0c0c0;
 }
 .tile {
+  font-weight: bold;
+  color: white;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   width: var(--cell-size);
   height: var(--cell-size);
-  border-radius: 1vmin;
   top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
   left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
-  font-weight: bold;
-  color: white;
   animation: show 200ms ease-in-out;
   transition: 100ms ease-in-out;
 }
+
+h3{
+  color: white;
+}
+
+#play-again-btn {
+  border: 4px solid #ffffff;
+  background-color: #0d5e5e;
+  border-radius: 70%;
+  height: 40px;
+  padding: 8px;
+  color: #fff;
+  transition: .5s;
+  }
+
+#play-again-btn:hover {
+    box-shadow: 8px 8px #0a0a0a;
+    transition: .3s;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  text-shadow: 7px 5px 7px rgb(28, 223, 70);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 
 @keyframes show {
   0% {
