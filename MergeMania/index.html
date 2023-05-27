@@ -6,20 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MERGE MANIA</title>
     <link rel="stylesheet" href="styles.css" />
-   
+
   </head>
   <body>
- 
-    <div id="container"></div>
-    <div id="game-over-modal" class="modal">
-      <div class="modal-content">
-        <h3>OOPS! You lose. </h3>
-        <button id="play-again-btn">REPLAY
-          <span>&#8619;</span>
+
+    <div>
+      <h2>MERGE MANIA</h2>
+      <div class="level">
+        <p>Choose your level:</p>
+        <button id="level1">
+          Amature
+        </button>
+        <button id="level2">
+          Advanced
+        </button>
+        <button id="level3">
+          Elite
         </button>
       </div>
+      <div id="container"></div>
+      <div id="game-over-modal" class="modal">
+        <div class="modal-content">
+          <h3>OOPS! You lose. </h3>
+          <button id="play-again-btn">REPLAY
+            <span>&#8619;</span>
+          </button>
+        </div>
 
-</div>
-<script src="script.js" type="module"></script>
+      </div>
+    </div>
+    <script src="script.js" type="module"></script>
   </body>
 </html>
