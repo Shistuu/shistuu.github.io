@@ -1,5 +1,8 @@
 import Grid from "./Cell.js";
 import Tile from "./tiles.js";
+import { initializeLevels } from './levels.js';
+
+initializeLevels();
 
 const gameBoard = document.getElementById("container");
 

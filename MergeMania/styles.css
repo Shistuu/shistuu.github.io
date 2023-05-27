@@ -18,6 +18,7 @@ h2 {
 p {
   text-align: center;
 }
+
 #level1,
 #level2,
 #level3 {
@@ -27,6 +28,14 @@ p {
   color: teal;
   font-weight: bold;
   background-color: #333;
+}
+
+button#level1:hover,
+button#level2:hover,
+button#level3:hover {
+  box-shadow: 8px 8px #8c8c8c;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 #container {
@@ -71,10 +80,6 @@ h3 {
   transition: 0.5s;
 }
 
-#play-again-btn:hover {
-  box-shadow: 8px 8px #0a0a0a;
-  transition: 0.3s;
-}
 .modal {
   display: none;
   position: fixed;
