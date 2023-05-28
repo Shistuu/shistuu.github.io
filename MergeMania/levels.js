@@ -1,20 +1,25 @@
 export function initializeLevels() {
-  const level1Button = document.getElementById('level1');
-  const level2Button = document.getElementById('level2');
-  const level3Button = document.getElementById('level3');
+  // Add event listeners to the level buttons
+const levelButtons = document.querySelectorAll(".level-button");
+const levelContainer = document.querySelector('.level-container');
+const gameContainer = document.getElementById('container');
+const container = document.getElementById('container');
 
-  level1Button.addEventListener('click', function() {
-    console.log('Navigating to Level 1...');
-    // Add your code for level 1 requirements and actions here
-  });
+levelButtons.forEach((button) => {
+  button.addEventListener("click", handleLevelButtonClick);
+});
 
-  level2Button.addEventListener('click', function() {
-    console.log('Navigating to Level 2...');
-    // Add your code for level 2 requirements and actions here
-  });
+// Handle level button click
+function handleLevelButtonClick(e) {
+  const levelButton = e.target;
+  const level = levelButton.dataset.level;
+  console.log("Level:", level);
+  
+  // Hide the level buttons
+  const levelContainer = document.querySelector(".level-container");
+  levelContainer.style.display = "none";
 
-  level3Button.addEventListener('click', function() {
-    console.log('Navigating to Level 3...');
-    // Add your code for level 3 requirements and actions here
-  });
+  // Start the game or perform any other actions based on the selected level
+  // ...
+}
 }

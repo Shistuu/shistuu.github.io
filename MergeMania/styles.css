@@ -1,6 +1,7 @@
+
 body {
   height: 100vh;
-  /* margin: 0; */
+  margin: 0;
   font-size: 40px;
   background-color: #333;
   display: flex;
@@ -9,19 +10,23 @@ body {
   flex-direction: column;
   color: white;
 }
-h2 {
+
+.container {
+  text-align: center;
+}
+
+.title {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 50px;
-  text-align: center;
-  margin-top: 100px;
+  margin-top: 80;
 }
+
 p {
   text-align: center;
 }
 
-#level1,
-#level2,
-#level3 {
+.level-button {
+  display: inline-block;
   padding: 10px;
   width: 90px;
   margin: 20px;
@@ -30,12 +35,17 @@ p {
   background-color: #333;
 }
 
-button#level1:hover,
-button#level2:hover,
-button#level3:hover {
+.level-button:hover {
   box-shadow: 8px 8px #8c8c8c;
   transition: 0.3s;
   cursor: pointer;
+}
+
+.level-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 #container {
@@ -46,20 +56,38 @@ button#level3:hover {
   gap: var(--cell-gap);
   padding: var(--cell-gap);
   position: relative;
+
+  
 }
 
 #score-container {
+  font-size: 20px;
   text-align: center;
   margin-top: 20px;
-
+  display: flex;
+  justify-content: space-between;
+  color: rgb(226, 159, 15);
+  text-shadow: 3px 5px 7px rgb(28, 223, 184);
+font-weight: bold;
 }
 
-#score-container p {
-  margin: 5px;
+.cscore-text {
+  margin: 15px;
+  /* border: 5px solid snow; */
+  border-style: outset;
+  padding: 10px;
+ 
 }
+.hscore-text {
+  margin: 15px;
+  padding: 10px;
+  border-style: inset;
+}
+
 .cell {
   background-color: #c0c0c0;
 }
+
 .tile {
   font-weight: bold;
   color: white;

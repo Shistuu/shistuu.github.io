@@ -16,12 +16,58 @@ if (highScore !== null) {
 initializeLevels();
 
 const gameBoard = document.getElementById("container");
+const levelButtons = document.querySelectorAll('.level-button');
+const gameContainer = document.getElementById('container');
+// const container = document.getElementById('container');
+const cells = document.getElementsByClassName('cell');
 
 
 const grid = new Grid(gameBoard);
 grid.randomEmptyCell().tile = new Tile(gameBoard);
 setupInput();
 
+levelButtons.forEach(button => {
+  button.addEventListener('click', function () {
+    const level = this.dataset.level;
+    startGame(level);
+  });
+});
+
+function startGame(level) {
+  levelContainer.classList.add('hide');
+  gameContainer.classList.remove('hide');
+
+
+  // Set up the game based on the selected level
+  switch (level) {
+    case '1':
+      setupLevel1();
+      break;
+    case '2':
+      setupLevel2();
+      break;
+    case '3':
+      setupLevel3();
+      break;
+    default:
+      console.log('Invalid level');
+  }
+}
+
+function setupLevel1() {
+  // Add your Level 1 game logic here
+  console.log('Level 1');
+}
+
+function setupLevel2() {
+  // Add your Level 2 game logic here
+  console.log('Level 2');
+}
+
+function setupLevel3() {
+  // Add your Level 3 game logic here
+  console.log('Level 3');
+}
 function setupInput() {
   window.addEventListener("keydown", handleInput, { once: true });
 }
@@ -157,7 +203,3 @@ function tile_Move(cells) {
     });
   });
 }
-
-
-
-
