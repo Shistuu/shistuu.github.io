@@ -1,10 +1,22 @@
 import Grid from "./Cell.js";
 import Tile from "./tiles.js";
-import { initializeLevels } from './levels.js';
+// import updateScore from "./updateCurrentScore.js";
+import { initializeLevels } from "./levels.js";
+
+let score = 0;
+
+// Get the high score from local storage
+let highScore = localStorage.getItem("highScore");
+if (highScore !== null) {
+  highScore = parseInt(highScore, 10);
+  const highScoreElement = document.getElementById("high-score");
+  highScoreElement.innerText = highScore.toString();
+}
 
 initializeLevels();
 
 const gameBoard = document.getElementById("container");
+
 
 const grid = new Grid(gameBoard);
 grid.randomEmptyCell().tile = new Tile(gameBoard);
@@ -13,7 +25,6 @@ setupInput();
 function setupInput() {
   window.addEventListener("keydown", handleInput, { once: true });
 }
-
 async function handleInput(e) {
   switch (e.key) {
     case "ArrowUp":
@@ -54,7 +65,12 @@ async function handleInput(e) {
   const newTile = new Tile(gameBoard);
   grid.randomEmptyCell().tile = newTile;
 
-  if (!tile_MoveUp() && !tile_MoveDown() && !tile_MoveLeft() && !tile_MoveRight()) {
+  if (
+    !tile_MoveUp() &&
+    !tile_MoveDown() &&
+    !tile_MoveLeft() &&
+    !tile_MoveRight()
+  ) {
     newTile.waitForTransition(true).then(() => {
       const modal = document.getElementById("game-over-modal");
       modal.style.display = "flex";
@@ -141,3 +157,7 @@ function tile_Move(cells) {
     });
   });
 }
+
+
+
+

@@ -1,7 +1,7 @@
 const GRID_SIZE = 4;
 const TILE = 15;
 const GAP = 2.5;
-
+let score=0;
 export default class Grid {
   #cells;
 
@@ -10,7 +10,11 @@ export default class Grid {
     gridElement.style.setProperty("--cell-size", `${TILE}vh`);
     gridElement.style.setProperty("--cell-gap", `${GAP}vh`);
     this.#cells = createCellElements(gridElement).map((cellElement, index) => {
-      return new Cell(cellElement, index % GRID_SIZE, Math.floor(index / GRID_SIZE));
+      return new Cell(
+        cellElement,
+        index % GRID_SIZE,
+        Math.floor(index / GRID_SIZE)
+      );
     });
   }
 
@@ -88,15 +92,39 @@ class Cell {
   }
 
   canAccept(tile) {
-    return this.tile == null || (this.mergeTile == null && this.tile.value === tile.value);
+    return (
+      this.tile == null ||
+      (this.mergeTile == null && this.tile.value === tile.value)
+    );
   }
 
   mergeTiles() {
     if (this.tile == null || this.mergeTile == null) return;
-    this.tile.value = this.tile.value + this.mergeTile.value;
+
+    const mergedValue = this.mergeTile.value;
+    this.tile.value += mergedValue;
+    score += mergedValue*2; 
+    console.log(score);
     this.mergeTile.remove();
     this.mergeTile = null;
+    updateScore();
+    updateHighScore(score);
   }
+  
+}
+
+function updateScore() {
+  const scoreElement = document.getElementById("current-score");
+  scoreElement.innerText = score.toString();
+}
+function updateHighScore(score) {
+  let highScore = localStorage.getItem("highScore");
+  if (highScore === null || score > highScore) {
+    highScore = score;
+    localStorage.setItem("highScore", highScore);
+  }
+  const highScoreElement = document.getElementById("high-score");
+  highScoreElement.innerText = highScore.toString();
 }
 
 function createCellElements(gridElement) {
