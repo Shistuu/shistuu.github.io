@@ -33,25 +33,7 @@ levelButtons.forEach(button => {
   });
 });
 
-function endGame() {
-  if (
-    !tile_MoveUp() &&
-    !tile_MoveDown() &&
-    !tile_MoveLeft() &&
-    !tile_MoveRight()
-  ) {
-    newTile.waitForTransition(true).then(() => {
-      const modal = document.getElementById("game-over-modal");
-      modal.style.display = "flex";
-
-      const playAgainBtn = document.getElementById("play-again-btn");
-      playAgainBtn.addEventListener("click", () => {
-        location.reload(); // Refresh the page
-      });
-    });
-    return;
-  }
-}
+ 
 
 function formatTime(time) {
   const minutes = Math.floor(time / 60)
@@ -106,12 +88,10 @@ function setupLevel2() {
     }
   }, 1000);
 
- 
-
   // Add your Level 2 game logic here
   console.log("Level 2");
 }
-endGame();
+
 
 function setupLevel3() {
   // Add your Level 3 game logic here
@@ -161,10 +141,25 @@ async function handleInput(e) {
 
   const newTile = new Tile(gameBoard);
   grid.randomEmptyCell().tile = newTile;
+  if (
+    !tile_MoveUp() &&
+    !tile_MoveDown() &&
+    !tile_MoveLeft() &&
+    !tile_MoveRight()
+  ) {
+    newTile.waitForTransition(true).then(() => {
+      const modal = document.getElementById("game-over-modal");
+      modal.style.display = "flex";
 
-  if (!endGame()) {
-    setupInput();
+      const playAgainBtn = document.getElementById("play-again-btn");
+      playAgainBtn.addEventListener("click", () => {
+        location.reload(); // Refresh the page
+      });
+    });
+    return;
   }
+
+  setupInput();
 }
 
 function Up() {
@@ -210,6 +205,7 @@ function slideTiles(cells) {
       return promises;
     })
   );
+  
 }
 
 function tile_MoveUp() {
