@@ -87,7 +87,7 @@ function setupLevel1() {
 
 
 function setupLevel2() {
-  const timerDuration = 0.25 * 60; // 2 minutes
+  const timerDuration = 1 * 60; // 2 minutes
   let remainingTime = timerDuration;
 
   const timerElement = document.getElementById("timer");
@@ -106,12 +106,12 @@ function setupLevel2() {
     }
   }, 1000);
 
+ 
+
   // Add your Level 2 game logic here
   console.log("Level 2");
-
-  endGame();
-
 }
+endGame();
 
 function setupLevel3() {
   // Add your Level 3 game logic here
