@@ -11,9 +11,9 @@ levelButtons.forEach((button) => {
 
 // Handle level button click
 function handleLevelButtonClick(e) {
-  const levelButton = e.target;
-  const level = levelButton.dataset.level;
-  console.log("Level:", level);
+  // const levelButton = e.target;
+  // const level = levelButton.dataset.level;
+  // console.log("Level:", level);
   
   // Hide the level buttons
   const levelContainer = document.querySelector(".level-container");

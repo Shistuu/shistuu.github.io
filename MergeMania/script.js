@@ -33,10 +33,36 @@ levelButtons.forEach(button => {
   });
 });
 
-function startGame(level) {
-  levelContainer.classList.add('hide');
-  gameContainer.classList.remove('hide');
+function endGame() {
+  if (
+    !tile_MoveUp() &&
+    !tile_MoveDown() &&
+    !tile_MoveLeft() &&
+    !tile_MoveRight()
+  ) {
+    newTile.waitForTransition(true).then(() => {
+      const modal = document.getElementById("game-over-modal");
+      modal.style.display = "flex";
 
+      const playAgainBtn = document.getElementById("play-again-btn");
+      playAgainBtn.addEventListener("click", () => {
+        location.reload(); // Refresh the page
+      });
+    });
+    return;
+  }
+}
+
+function formatTime(time) {
+  const minutes = Math.floor(time / 60)
+    .toString()
+    .padStart(2, "0");
+  const seconds = (time % 60).toString().padStart(2, "0");
+  return `${minutes}:${seconds}`;
+}
+
+function startGame(level) {
+  gameContainer.classList.remove('hide');
 
   // Set up the game based on the selected level
   switch (level) {
@@ -59,18 +85,43 @@ function setupLevel1() {
   console.log('Level 1');
 }
 
+
 function setupLevel2() {
+  const timerDuration = 0.25 * 60; // 2 minutes
+  let remainingTime = timerDuration;
+
+  const timerElement = document.getElementById("timer");
+  timerElement.textContent = formatTime(remainingTime);
+
+  const timer = setInterval(() => {
+    remainingTime--;
+    timerElement.textContent = formatTime(remainingTime);
+
+    if (remainingTime <= 0) {
+      clearInterval(timer);
+      endGame();
+    } else if (remainingTime === 30) {
+      // Additional requirement for Level 2: Display a warning or trigger an event when 30 seconds are remaining
+      console.log("30 seconds remaining!");
+    }
+  }, 1000);
+
   // Add your Level 2 game logic here
-  console.log('Level 2');
+  console.log("Level 2");
+
+  endGame();
+
 }
 
 function setupLevel3() {
   // Add your Level 3 game logic here
   console.log('Level 3');
 }
+
 function setupInput() {
   window.addEventListener("keydown", handleInput, { once: true });
 }
+
 async function handleInput(e) {
   switch (e.key) {
     case "ArrowUp":
@@ -111,25 +162,9 @@ async function handleInput(e) {
   const newTile = new Tile(gameBoard);
   grid.randomEmptyCell().tile = newTile;
 
-  if (
-    !tile_MoveUp() &&
-    !tile_MoveDown() &&
-    !tile_MoveLeft() &&
-    !tile_MoveRight()
-  ) {
-    newTile.waitForTransition(true).then(() => {
-      const modal = document.getElementById("game-over-modal");
-      modal.style.display = "flex";
-
-      const playAgainBtn = document.getElementById("play-again-btn");
-      playAgainBtn.addEventListener("click", () => {
-        location.reload(); // Refresh the page
-      });
-    });
-    return;
+  if (!endGame()) {
+    setupInput();
   }
-
-  setupInput();
 }
 
 function Up() {
