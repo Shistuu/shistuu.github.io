@@ -4,7 +4,8 @@ import Tile from "./tiles.js";
 import { initializeLevels } from "./levels.js";
 
 // let score = 0;
-let gameActive = true; //flag to track the game state
+var gameActive = true; //flag to track the game state
+
 // Get the high score from local storage
 let highScore = localStorage.getItem("highScore");
 if (highScore !== null) {
@@ -117,7 +118,9 @@ function setupInput() {
 async function handleInput(e) {
   switch (e.key) {
     case "ArrowUp":
+  
       if (!tile_MoveUp()) {
+    
         setupInput();
         return;
       }
@@ -176,6 +179,7 @@ async function handleInput(e) {
 }
 
 function Up() {
+  
   return slideTiles(grid.Column);
 }
 

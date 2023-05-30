@@ -10,18 +10,21 @@ levelButtons.forEach((button) => {
   button.addEventListener("click", handleLevelButtonClick);
 });
 
-// Handle level button click
 function handleLevelButtonClick(e) {
-  // const levelButton = e.target;
-  // const level = levelButton.dataset.level;
-  // console.log("Level:", level);
-  
+  const levelButton = e.target;
+  const dataLevel = levelButton.getAttribute('data-level');
+
   // Hide the level buttons
   const levelContainer = document.querySelector(".level-container");
   levelContainer.style.display = "none";
 
   // Start the game or perform any other actions based on the selected level
-  // ...
+  if (dataLevel === '1' || dataLevel === '3') {
+    const timer = document.getElementById('timer');
+    timer.style.display = 'none';
+  }
+
+  startGame(dataLevel);
 }
 
 levelButtons.forEach((button) => {
@@ -41,7 +44,7 @@ function formatTime(time) {
 
 function startGame(level) {
   gameContainer.classList.remove("hide");
-
+  
   // Set up the game based on the selected level
   switch (level) {
     case "1":
@@ -56,6 +59,10 @@ function startGame(level) {
     default:
       console.log("Invalid level");
   }
+  if (dataLevel === '1' || dataLevel === '3') {
+        const timer = document.getElementById('timer');
+        timer.style.display = 'none';
+      }
 }
 
 function setupLevel1() {
@@ -64,7 +71,7 @@ function setupLevel1() {
 }
 
 function setupLevel2() {
-  const timerDuration = 0.25 * 60; // 2 minutes
+  const timerDuration = 0.25 * 60; // x minutes
   let remainingTime = timerDuration;
 
   const timerElement = document.getElementById("timer");
@@ -81,6 +88,7 @@ function setupLevel2() {
         !tile_MoveLeft() &&
         !tile_MoveRight())
     ) {
+      debugger;
       clearInterval(timer);
 
       const modal = document.getElementById("game-over-modal");
@@ -90,7 +98,9 @@ function setupLevel2() {
       playAgainBtn.addEventListener("click", () => {
         location.reload(); // Refresh the page
       });
+
       gameActive = false; // Disable tile movement
+    
       return;
     } else if (remainingTime === 30) {
       // Additional requirement for Level 2: Display a warning or trigger an event when 30 seconds are remaining
