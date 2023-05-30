@@ -1,6 +1,5 @@
 import Grid from "./Cell.js";
 import Tile from "./tiles.js";
-// import updateScore from "./updateCurrentScore.js";
 import { initializeLevels } from "./levels.js";
 
 // let score = 0;

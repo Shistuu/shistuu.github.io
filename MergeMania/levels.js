@@ -4,9 +4,12 @@ export function initializeLevels() {
   const levelButtons = document.querySelectorAll(".level-button");
   const levelContainer = document.querySelector(".level-container");
   const gameContainer = document.getElementById("container");
-  gameContainer.style.display = "none";
   const timer = document.getElementById("timer");
+  const SCORE_CONTAINER = document.getElementById("score-container");
+
+  gameContainer.style.display = "none";
   timer.style.display = "none";
+  SCORE_CONTAINER.style.display = "none";
 
   levelButtons.forEach((button) => {
     button.addEventListener("click", handleLevelButtonClick);
@@ -22,12 +25,13 @@ export function initializeLevels() {
     // Show the game container
 
     gameContainer.style.display = "grid";
+    SCORE_CONTAINER.style.display = "block";
     // Start the game or perform any other actions based on the selected level
     if (dataLevel === "2") {
       timer.style.display = "block";
+    } else if (dataLevel === "3") {
+      timer.style.display = "block";
     }
-
-    debugger;
 
     startGame(dataLevel);
   }
@@ -67,13 +71,13 @@ export function initializeLevels() {
   }
 
   function setupLevel1() {
-    // Add your Level 1 game logic here
-    console.log("Level 1");
+   
   }
 
   function setupLevel2() {
-    const timerDuration = 0.25 * 60; // x minutes
+    const timerDuration = 35 ; // x minutes
     let remainingTime = timerDuration;
+    const warningMessage = document.getElementById("warning-message");
 
     const timerElement = document.getElementById("timer");
     timerElement.textContent = formatTime(remainingTime);
@@ -83,11 +87,11 @@ export function initializeLevels() {
       timerElement.textContent = formatTime(remainingTime);
 
       if (
-        remainingTime <= 0 ||
-        (!tile_MoveUp() &&
-          !tile_MoveDown() &&
-          !tile_MoveLeft() &&
-          !tile_MoveRight())
+        remainingTime <= 0 
+        // (!tile_MoveUp() &&
+        //   !tile_MoveDown() &&
+        //   !tile_MoveLeft() &&
+        //   !tile_MoveRight())
       ) {
         clearInterval(timer);
 
@@ -102,16 +106,56 @@ export function initializeLevels() {
         gameActive = false; // Disable tile movement
 
         return;
-      } else if (remainingTime === 30) {
-        // Additional requirement for Level 2: Display a warning or trigger an event when 30 seconds are remaining
-        console.log("30 seconds remaining!");
+      } else if (remainingTime <= 30 && remainingTime >=27) {
+        warningMessage.innerHTML =remainingTime + " seconds remaining!" ;
+       } else {
+        warningMessage.innerHTML = "";
       }
     }, 1000);
   }
 
   //
   function setupLevel3() {
-    // Add your Level 3 game logic here
-    console.log("Level 3");
+    const timerDuration = 35; // x minutes
+    let remainingTime = timerDuration;
+    const timerElement = document.getElementById("timer");
+    timerElement.textContent = formatTime(remainingTime);
+
+    const warningMessage = document.getElementById("warning-message");
+
+    const timer = setInterval(() => {
+      remainingTime--;
+      timerElement.textContent = formatTime(remainingTime);
+
+
+
+      if (
+        remainingTime <= 0 
+        // (!tile_MoveUp() &&
+        //   !tile_MoveDown() &&
+        //   !tile_MoveLeft() &&
+        //   !tile_MoveRight())
+      ) {
+
+        clearInterval(timer);
+
+        const modal = document.getElementById("game-over-modal");
+        modal.style.display = "flex";
+
+        const playAgainBtn = document.getElementById("play-again-btn");
+        playAgainBtn.addEventListener("click", () => {
+          location.reload(); // Refresh the page
+        });
+
+
+        // gameActive = false; // Disable tile movement
+        return;
+      }
+      else if (remainingTime <= 30 && remainingTime >=27) {
+        warningMessage.innerHTML = remainingTime + " seconds remaining!" ;
+       } else {
+        warningMessage.innerHTML = "";
+      }
+    }, 1000);
   }
 }
