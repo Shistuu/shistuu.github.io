@@ -1,6 +1,10 @@
-
+:root {
+  --grid-size: 4;
+  --cell-size: 100px;
+  --cell-gap: 10px;
+}
 body {
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0;
   font-size: 40px;
   background-color: #333;
