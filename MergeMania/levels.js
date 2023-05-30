@@ -70,12 +70,10 @@ export function initializeLevels() {
     }
   }
 
-  function setupLevel1() {
-   
-  }
+  function setupLevel1() {}
 
   function setupLevel2() {
-    const timerDuration = 35 ; // x minutes
+    const timerDuration = 35; // x minutes
     let remainingTime = timerDuration;
     const warningMessage = document.getElementById("warning-message");
 
@@ -87,7 +85,7 @@ export function initializeLevels() {
       timerElement.textContent = formatTime(remainingTime);
 
       if (
-        remainingTime <= 0 
+        remainingTime <= 0
         // (!tile_MoveUp() &&
         //   !tile_MoveDown() &&
         //   !tile_MoveLeft() &&
@@ -106,17 +104,17 @@ export function initializeLevels() {
         gameActive = false; // Disable tile movement
 
         return;
-      } else if (remainingTime <= 30 && remainingTime >=27) {
-        warningMessage.innerHTML =remainingTime + " seconds remaining!" ;
-       } else {
+      } else if (remainingTime <= 30 && remainingTime >= 27) {
+        warningMessage.innerHTML = remainingTime + " seconds remaining!";
+      } else {
         warningMessage.innerHTML = "";
       }
     }, 1000);
   }
 
-  //
+  
   function setupLevel3() {
-    const timerDuration = 35; // x minutes
+    const timerDuration = 65; // x minutes
     let remainingTime = timerDuration;
     const timerElement = document.getElementById("timer");
     timerElement.textContent = formatTime(remainingTime);
@@ -127,16 +125,13 @@ export function initializeLevels() {
       remainingTime--;
       timerElement.textContent = formatTime(remainingTime);
 
-
-
       if (
-        remainingTime <= 0 
+        remainingTime <= 0
         // (!tile_MoveUp() &&
         //   !tile_MoveDown() &&
         //   !tile_MoveLeft() &&
         //   !tile_MoveRight())
       ) {
-
         clearInterval(timer);
 
         const modal = document.getElementById("game-over-modal");
@@ -147,15 +142,52 @@ export function initializeLevels() {
           location.reload(); // Refresh the page
         });
 
-
         // gameActive = false; // Disable tile movement
         return;
-      }
-      else if (remainingTime <= 30 && remainingTime >=27) {
-        warningMessage.innerHTML = remainingTime + " seconds remaining!" ;
-       } else {
+      } else if (remainingTime <= 30 && remainingTime >= 27) {
+        warningMessage.innerHTML = remainingTime + " seconds remaining!";
+      } else {
         warningMessage.innerHTML = "";
       }
+
+      if (remainingTime % 12 === 0) {
+        createObstacleTile();
+      }
     }, 1000);
+  }
+  function createObstacleTile() {
+    const gridCells = grid.cells;
+    const emptyCells = gridCells.filter((cell) => cell.tile == null);
+
+    if (emptyCells.length >= 2) {
+      const randomIndices = getRandomIndices(emptyCells.length, 2);
+
+      randomIndices.forEach((index) => {
+        const cell = emptyCells[index];
+        const obstacleTile = new Tile(gameBoard);
+        obstacleTile.value = 2; // Assigning a value for the obstacle tile
+        obstacleTile.isObstacle = true; // Adding a property to identify obstacle tiles
+        cell.tile = obstacleTile;
+
+        // Adding a CSS class to style the obstacle tiles as gray
+        const tileElement = document.querySelector(
+          `.tile-position-${cell.x}-${cell.y}`
+        );
+        tileElement.classList.add("obstacle-tile");
+      });
+    }
+  }
+
+  function getRandomIndices(length, count) {
+    const indices = Array.from(Array(length).keys());
+    shuffleArray(indices);
+    return indices.slice(0, count);
+  }
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   }
 }
