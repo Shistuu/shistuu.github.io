@@ -150,44 +150,10 @@ export function initializeLevels() {
         warningMessage.innerHTML = "";
       }
 
-      if (remainingTime % 12 === 0) {
-        createObstacleTile();
-      }
     }, 1000);
-  }
-  function createObstacleTile() {
-    const gridCells = grid.cells;
-    const emptyCells = gridCells.filter((cell) => cell.tile == null);
-
-    if (emptyCells.length >= 2) {
-      const randomIndices = getRandomIndices(emptyCells.length, 2);
-
-      randomIndices.forEach((index) => {
-        const cell = emptyCells[index];
-        const obstacleTile = new Tile(gameBoard);
-        obstacleTile.value = 2; // Assigning a value for the obstacle tile
-        obstacleTile.isObstacle = true; // Adding a property to identify obstacle tiles
-        cell.tile = obstacleTile;
-
-        // Adding a CSS class to style the obstacle tiles as gray
-        const tileElement = document.querySelector(
-          `.tile-position-${cell.x}-${cell.y}`
-        );
-        tileElement.classList.add("obstacle-tile");
-      });
-    }
+  
+    
   }
 
-  function getRandomIndices(length, count) {
-    const indices = Array.from(Array(length).keys());
-    shuffleArray(indices);
-    return indices.slice(0, count);
-  }
-
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
+ 
 }
