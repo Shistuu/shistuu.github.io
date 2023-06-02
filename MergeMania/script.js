@@ -1,6 +1,9 @@
 import Grid from "./Cell.js";
 import Tile from "./tiles.js";
-import { initializeLevels } from "./levels.js";
+import { initializeLevels } from "./index.js";
+
+initializeLevels();
+
 
 // let score = 0;
 var gameActive = true; //flag to track the game state
@@ -13,7 +16,6 @@ if (highScore !== null) {
   highScoreElement.innerText = highScore.toString();
 }
 
-initializeLevels();
 
 const gameBoard = document.getElementById("container");
 const levelButtons = document.querySelectorAll(".level-button");
