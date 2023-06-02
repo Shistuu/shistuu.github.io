@@ -1,9 +1,4 @@
-import { formatTime } from './formatTime.js';
-import { setupLevel1 } from './setupLevel1.js';
-import { setupLevel2 } from './setupLevel2.js';
-import { setupLevel3 } from './setupLevel3.js';
-import { startGame } from './startGame.js';
-
+import { startGame } from "./startGame.js";
 
 export function initializeLevels() {
   let score = 0;
@@ -40,10 +35,6 @@ export function initializeLevels() {
     }
     startGame(dataLevel, gameContainer);
   }
-
-  // Remaining code...
-
-  // Export the initializeLevels function
   return {
     initializeLevels,
   };
