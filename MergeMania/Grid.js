@@ -4,12 +4,12 @@ import Cell from "./Cell.js";
 export const GRID_SIZE = 4;
 export const TILE = 15;
 export const GAP = 2.5;
-// let score=0;
+
 export default class Grid {
   #cells;
 
-  constructor(gridElement) {
-    gridElement.style.setProperty("--grid-size", GRID_SIZE);
+  constructor(gridElement, gridSize = GRID_SIZE) {
+    gridElement.style.setProperty("--grid-size", gridSize);
     gridElement.style.setProperty("--cell-size", `${TILE}vh`);
     gridElement.style.setProperty("--cell-gap", `${GAP}vh`);
     this.#cells = createCellElements(gridElement).map((cellElement, index) => {

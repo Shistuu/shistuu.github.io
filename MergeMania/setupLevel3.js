@@ -6,12 +6,20 @@ import {
   tile_MoveRight,
 } from "./script.js";
 import { game } from "./script.js";
+import Grid from "./Grid.js";
 
 export function setupLevel3() {
+  const gridSize=5;
+
+  const gameBoard = document.getElementById("container");
+  const grid = new Grid (gameBoard, gridSize); // Pas s gridSize as a parameter
+
   const timerDuration = 5; // x minutes
   let remainingTime = timerDuration;
   const timerElement = document.getElementById("timer");
   timerElement.textContent = formatTime(remainingTime);
+
+ 
 
   const warningMessage = document.getElementById("warning-message");
 
