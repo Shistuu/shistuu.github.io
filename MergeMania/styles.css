@@ -24,8 +24,8 @@ body {
   font-size: 50px;
   margin-top: 80;
 }
-#warning-message{
-color: RED;
+#warning-message {
+  color: RED;
 }
 p {
   text-align: center;
@@ -62,8 +62,6 @@ p {
   gap: var(--cell-gap);
   padding: var(--cell-gap);
   position: relative;
-
-  
 }
 
 #score-container {
@@ -74,7 +72,7 @@ p {
   justify-content: space-between;
   color: rgb(226, 159, 15);
   text-shadow: 3px 5px 7px rgb(28, 223, 184);
-font-weight: bold;
+  font-weight: bold;
 }
 
 .cscore-text {
@@ -82,7 +80,6 @@ font-weight: bold;
   /* border: 5px solid snow; */
   border-style: outset;
   padding: 10px;
- 
 }
 .hscore-text {
   margin: 15px;
@@ -109,7 +106,7 @@ font-weight: bold;
   transition: 100ms ease-in-out;
 }
 
-.obstacle-tile{
+.obstacle-tile {
   color: rgb(0, 21, 255);
 }
 h3 {
