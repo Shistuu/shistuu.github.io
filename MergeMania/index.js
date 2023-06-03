@@ -3,37 +3,37 @@ import { startGame } from "./startGame.js";
 export function initializeLevels() {
   let score = 0;
   // Add event listeners to the level buttons
-  const levelButtons = document.querySelectorAll(".level-button");
-  const levelContainer = document.querySelector(".level-container");
-  const gameContainer = document.getElementById("container");
-  const timer = document.getElementById("timer");
+  const LEVEL_BUTTONS = document.querySelectorAll(".level-button");
+  const LEVEL_CONTAINER = document.querySelector(".level-container");
+  const GAME_CONTAINER = document.getElementById("container");
+  const TIMER = document.getElementById("timer");
   const SCORE_CONTAINER = document.getElementById("score-container");
 
-  gameContainer.style.display = "none";
-  timer.style.display = "none";
+  GAME_CONTAINER.style.display = "none";
+  TIMER.style.display = "none";
   SCORE_CONTAINER.style.display = "none";
 
-  levelButtons.forEach((button) => {
+  LEVEL_BUTTONS.forEach((button) => {
     button.addEventListener("click", handleLevelButtonClick);
   });
 
   function handleLevelButtonClick(e) {
-    const levelButton = e.target;
-    const dataLevel = levelButton.getAttribute("data-level");
+    const LEVEL_BUTTON = e.target;
+    const DATA_LEVEL = LEVEL_BUTTON.getAttribute("data-level");
 
     // Hide the level buttons
-    levelContainer.style.display = "none";
+    LEVEL_CONTAINER.style.display = "none";
     // Show the game container
-    gameContainer.style.display = "grid";
+    GAME_CONTAINER.style.display = "grid";
     SCORE_CONTAINER.style.display = "block";
 
     // Start the game or perform any other actions based on the selected level
-    if (dataLevel === "2") {
-      timer.style.display = "block";
-    } else if (dataLevel === "3") {
-      timer.style.display = "block";
+    if (DATA_LEVEL === "2") {
+      TIMER.style.display = "block";
+    } else if (DATA_LEVEL === "3") {
+      TIMER.style.display = "block";
     }
-    startGame(dataLevel, gameContainer);
+    startGame(DATA_LEVEL, GAME_CONTAINER);
   }
   return {
     initializeLevels,

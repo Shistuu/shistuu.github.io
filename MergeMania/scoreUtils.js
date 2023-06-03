@@ -1,6 +1,6 @@
 export function updateScore(score) {
-    const scoreElement = document.getElementById("current-score");
-    scoreElement.innerText = score.toString();
+    const SCORE_ELEMENT = document.getElementById("current-score");
+    SCORE_ELEMENT.innerText = score.toString();
   }
   
   export function updateHighScore(score) {
@@ -9,6 +9,6 @@ export function updateScore(score) {
       highScore = score;
       localStorage.setItem("highScore", highScore);
     }
-    const highScoreElement = document.getElementById("high-score");
-    highScoreElement.innerText = highScore.toString();
+    const HIGHSCORE_ELEMENT = document.getElementById("high-score");
+    HIGHSCORE_ELEMENT.innerText = highScore.toString();
   }

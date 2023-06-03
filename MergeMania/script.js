@@ -1,5 +1,3 @@
-
-// import Cell from "./Cell.js";
 import Tile from "./tiles.js";
 import { initializeLevels } from "./index.js";
 import Grid from "./Grid.js";
@@ -16,10 +14,10 @@ if (highScore !== null) {
   highScoreElement.innerText = highScore.toString();
 }
 
-const gameBoard = document.getElementById("container");
+const GAMEBOARD = document.getElementById("container");
 
-const grid = new Grid(gameBoard);
-grid.randomEmptyCell().tile = new Tile(gameBoard);
+const GRID = new Grid(GAMEBOARD);
+GRID.randomEmptyCell().tile = new Tile(GAMEBOARD);
 setupInput();
 
 function setupInput() {
@@ -61,27 +59,27 @@ async function handleInput(e) {
       return;
   }
 
-  grid.cells.forEach((cell) => cell.mergeTiles());
+  GRID.cells.forEach((cell) => cell.mergeTiles());
 
-  const newTile = new Tile(gameBoard);
-  grid.randomEmptyCell().tile = newTile;
+  const newTile = new Tile(GAMEBOARD);
+  GRID.randomEmptyCell().tile = newTile;
   setupInput();
 }
 
 function Up() {
-  return slideTiles(grid.Column);
+  return slideTiles(GRID.Column);
 }
 
 function Down() {
-  return slideTiles(grid.Column.map((column) => [...column].reverse()));
+  return slideTiles(GRID.Column.map((column) => [...column].reverse()));
 }
 
 function Left() {
-  return slideTiles(grid.Row);
+  return slideTiles(GRID.Row);
 }
 
 function Right() {
-  return slideTiles(grid.Row.map((row) => [...row].reverse()));
+  return slideTiles(GRID.Row.map((row) => [...row].reverse()));
 }
 
 function slideTiles(cells) {
@@ -115,22 +113,22 @@ function slideTiles(cells) {
 
 export function tile_MoveUp() {
   if (!game.active) return false;
-  return tile_Move(grid.Column);
+  return tile_Move(GRID.Column);
 }
 
 export function tile_MoveDown() {
   if (!game.active) return false;
-  return tile_Move(grid.Column.map((column) => [...column].reverse()));
+  return tile_Move(GRID.Column.map((column) => [...column].reverse()));
 }
 
 export function tile_MoveLeft() {
   if (!game.active) return false;
-  return tile_Move(grid.Row);
+  return tile_Move(GRID.Row);
 }
 
 export function tile_MoveRight() {
   if (!game.active) return false;
-  return tile_Move(grid.Row.map((row) => [...row].reverse()));
+  return tile_Move(GRID.Row.map((row) => [...row].reverse()));
 }
 
 function tile_Move(cells) {
