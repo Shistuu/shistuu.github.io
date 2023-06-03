@@ -1,7 +1,8 @@
-import Grid from "./Cell.js";
+
+// import Cell from "./Cell.js";
 import Tile from "./tiles.js";
 import { initializeLevels } from "./index.js";
-
+import Grid from "./Grid.js";
 initializeLevels();
 
 export var game = {
