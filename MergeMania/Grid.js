@@ -1,22 +1,28 @@
 import { createCellElements } from "./cellUtils.js";
 import Cell from "./Cell.js";
 
-export const GRID_SIZE = 4;
+// export const gridSize = 4;
 export const TILE = 15;
 export const GAP = 2.5;
 
 export default class Grid {
   #cells;
+  #RANDOM_INDEX_X;
+  #RANDOM_INDEX_Y;
 
-  constructor(gridElement, gridSize = GRID_SIZE) {
+  constructor(gridElement, gridSize, level) {
     gridElement.style.setProperty("--grid-size", gridSize);
     gridElement.style.setProperty("--cell-size", `${TILE}vh`);
     gridElement.style.setProperty("--cell-gap", `${GAP}vh`);
-    this.#cells = createCellElements(gridElement).map((cellElement, index) => {
+    this.#RANDOM_INDEX_X = Math.floor(Math.random() * gridSize);
+    this.#RANDOM_INDEX_Y = Math.floor(Math.random() * gridSize);
+    this.#cells = createCellElements(gridElement,this.#RANDOM_INDEX_X,this.#RANDOM_INDEX_Y,gridSize,level).map((cellElement, index) => {
       return new Cell(
-        cellElement,
-        index % GRID_SIZE,
-        Math.floor(index / GRID_SIZE)
+        index % gridSize,
+        Math.floor(index / gridSize),
+        this.#RANDOM_INDEX_X,
+        this.#RANDOM_INDEX_Y,
+        level
       );
     });
   }

@@ -1,6 +1,7 @@
 import Tile from "./tiles.js";
 import { initializeLevels } from "./index.js";
-import Grid from "./Grid.js";
+// import Grid from "./Grid.js";
+
 initializeLevels();
 
 //object that has property active set to true
@@ -14,14 +15,14 @@ if (highScore !== null) {
   const highScoreElement = document.getElementById("high-score");
   highScoreElement.innerText = highScore.toString();
 }
+var GRID;
+var GAMEBOARD;
+export function sendGrid(grid, gameBoard){
+  GRID = grid;
+  GAMEBOARD = gameBoard;
+}
 
-const GAMEBOARD = document.getElementById("container");
-
-const GRID = new Grid(GAMEBOARD); //grid should be created inside the gameboard container
-GRID.randomEmptyCell().tile = new Tile(GAMEBOARD); //generates a new tile and places in random cell on the grid
-setupInput(); // handles user input in the game
-
-function setupInput() {
+export function setupInput() {
   window.addEventListener("keydown", handleInput, { once: true }); // Each time setupInput() is called, a new event listener is registered, and they are not automatically removed after the first trigger.
 }
 

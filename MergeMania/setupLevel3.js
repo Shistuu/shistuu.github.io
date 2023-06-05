@@ -1,34 +1,35 @@
 import { formatTime } from "./formatTime.js";
-import {
-  tile_MoveUp,
-  tile_MoveDown,
-  tile_MoveLeft,
-  tile_MoveRight,
-} from "./script.js";
 import { game } from "./script.js";
+import {tile_MoveUp, tile_MoveDown, tile_MoveLeft, tile_MoveRight,setupInput, sendGrid } from './script.js';
 import Grid from "./Grid.js";
+import Tile from "./tiles.js";
 
 export function setupLevel3() {
-  const gridSize=5;
+  const gridSize = 5;
+  const level=3;
+  
+  const GAMEBOARD = document.getElementById("container");
+  const GRID = new Grid(GAMEBOARD,gridSize,level);
+  GRID.randomEmptyCell().tile = new Tile(GAMEBOARD);
+  sendGrid(GRID,GAMEBOARD);
+  setupInput();
 
-  const gameBoard = document.getElementById("container");
-  const grid = new Grid (gameBoard, gridSize); // Pas s gridSize as a parameter
 
-  const timerDuration = 5; // x minutes
+  const timerDuration = 500; // x seconds
   let remainingTime = timerDuration;
+  const warningMessage = document.getElementById("warning-message");
+
   const timerElement = document.getElementById("timer");
   timerElement.textContent = formatTime(remainingTime);
 
- 
-
-  const warningMessage = document.getElementById("warning-message");
+  
 
   const timer = setInterval(() => {
     remainingTime--;
     timerElement.textContent = formatTime(remainingTime);
 
     if (
-      (remainingTime <= 0) ||
+      remainingTime <= 0 ||
       (!tile_MoveUp() &&
         !tile_MoveDown() &&
         !tile_MoveLeft() &&
@@ -45,6 +46,7 @@ export function setupLevel3() {
       });
 
       game.active = false; // Disable tile movement
+
       return;
     } else if (remainingTime <= 30 && remainingTime >= 27) {
       warningMessage.innerHTML = remainingTime + " seconds remaining!";

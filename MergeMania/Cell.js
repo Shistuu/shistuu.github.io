@@ -1,16 +1,23 @@
 let score = 0;
 
 export default class Cell {
-  #cellEl;
   #x;
   #y;
   #tile;
   #mergeTile;
+  //change
+  #obstacleIndexX;
+  #obstacleIndexY;
+  #level;
 
-  constructor(cellElement, x, y) {
-    this.#cellEl = cellElement;
+  constructor(x, y, obstacleIndexX, obstacleIndexY,level) {
     this.#x = x;
     this.#y = y;
+    //change
+    this.#obstacleIndexX=obstacleIndexX;
+    this.#obstacleIndexY=obstacleIndexY;
+    this.#level = level;
+    // console.log(this.#obstacleIndexX+" is X\n",this.#obstacleIndexY+" is y");
   }
 
   get x() {
@@ -30,6 +37,16 @@ export default class Cell {
     if (value == null) return;
     this.#tile.x = this.#x;
     this.#tile.y = this.#y;
+    //change
+    if(this.#level == 3){
+      if((this.#x==this.#obstacleIndexX) && (this.#y==this.#obstacleIndexY)){
+        this.#tile.isObstacle = true;
+        value.tileElement.classList.add("obstacleBorder");
+      } else{
+        this.#tile.isObstacle = false;
+        value.tileElement.classList.remove("obstacleBorder");
+      }
+    }
   }
 
   get mergeTile() {
@@ -46,7 +63,7 @@ export default class Cell {
   canAccept(tile) {
     return (
       this.tile == null ||
-      (this.mergeTile == null && this.tile.value === tile.value)
+      (this.mergeTile == null && this.tile.value === tile.value && !this.tile.isObstacle) //change
     );
   }
 
@@ -56,7 +73,6 @@ export default class Cell {
     const MERGED_VALUE = this.mergeTile.value;
     this.tile.value += MERGED_VALUE;
     score += MERGED_VALUE * 2;
-    console.log(score);
     this.mergeTile.remove();
     this.mergeTile = null;
     updateScore();
