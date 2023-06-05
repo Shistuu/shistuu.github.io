@@ -1,10 +1,10 @@
+/* set the grid size, cell size, and cell gap for the game board. */
 :root {
   --grid-size: 4;
   --cell-size: 100px;
   --cell-gap: 10px;
 }
 body {
-  /* height: 100vh; */
   margin: 0;
   font-size: 40px;
   background-color: #333;
@@ -54,9 +54,12 @@ p {
   margin-top: 20px;
 }
 
+/* styles the game board container.  */
 #container {
   display: grid;
-  grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+
+  /* defines the number of columns and rows based on the --grid-size variable */
+  grid-template-columns: repeat(var(--grid-size), var(--cell-size)); 
   grid-template-rows: repeat(var(--grid-size), var(--cell-size));
   background-color: #000000;
   gap: var(--cell-gap);
@@ -91,6 +94,7 @@ p {
   background-color: #c0c0c0;
 }
 
+/* styles the individual tiles in the game board */
 .tile {
   font-weight: bold;
   color: white;
@@ -106,7 +110,7 @@ p {
   transition: 100ms ease-in-out;
 }
 
-.obstacleBorder{
+.obstacleBorder {
   box-sizing: border-box;
   border: 5px solid red;
 }
