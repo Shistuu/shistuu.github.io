@@ -5,7 +5,6 @@ export default class Cell {
   #y;
   #tile;
   #mergeTile;
-  //change
   #obstacleIndexX;
   #obstacleIndexY;
   #level;
@@ -13,7 +12,6 @@ export default class Cell {
   constructor(x, y, obstacleIndexX, obstacleIndexY,level) {
     this.#x = x;
     this.#y = y;
-    //change
     this.#obstacleIndexX=obstacleIndexX;
     this.#obstacleIndexY=obstacleIndexY;
     this.#level = level;
@@ -37,7 +35,7 @@ export default class Cell {
     if (value == null) return;
     this.#tile.x = this.#x;
     this.#tile.y = this.#y;
-    //change
+
     if(this.#level == 3){
       if((this.#x==this.#obstacleIndexX) && (this.#y==this.#obstacleIndexY)){
         this.#tile.isObstacle = true;
@@ -63,7 +61,7 @@ export default class Cell {
   canAccept(tile) {
     return (
       this.tile == null ||
-      (this.mergeTile == null && this.tile.value === tile.value && !this.tile.isObstacle) //change
+      (this.mergeTile == null && this.tile.value === tile.value && !this.tile.isObstacle) 
     );
   }
 
