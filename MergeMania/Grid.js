@@ -16,6 +16,9 @@ export default class Grid {
     gridElement.style.setProperty("--cell-gap", `${GAP}vh`);
     this.#RANDOM_INDEX_X = Math.floor(Math.random() * gridSize);
     this.#RANDOM_INDEX_Y = Math.floor(Math.random() * gridSize);
+    
+    // Create the grid cells by calling the createCellElements function,
+    // map them to Cell objects, and assign them to the private #cells property
     this.#cells = createCellElements(gridElement,this.#RANDOM_INDEX_X,this.#RANDOM_INDEX_Y,gridSize,level).map((cellElement, index) => {
       return new Cell(
         index % gridSize,
@@ -26,10 +29,12 @@ export default class Grid {
       );
     });
   }
+    // Getter for the cells property
   get cells() {
     return this.#cells;
   }
 
+  // Getter for the cells grouped by rows
   get Row() {
     return this.#cells.reduce((cellGrid, cell) => {
       cellGrid[cell.y] = cellGrid[cell.y] || [];
@@ -38,6 +43,7 @@ export default class Grid {
     }, []);
   }
 
+  // Getter for the cells grouped by columns
   get Column() {
     return this.#cells.reduce((cellGrid, cell) => {
       cellGrid[cell.x] = cellGrid[cell.x] || [];
@@ -46,10 +52,11 @@ export default class Grid {
     }, []);
   }
 
+    // Getter for the empty cells in the grid
   get #emptyCells() {
     return this.#cells.filter((cell) => cell.tile == null);
   }
-
+  // Method to get a random empty cell from the grid
   randomEmptyCell() {
     const RANDOM_INDEX = Math.floor(Math.random() * this.#emptyCells.length);
     return this.#emptyCells[RANDOM_INDEX];
