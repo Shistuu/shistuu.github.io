@@ -1,4 +1,4 @@
-let score = 0;
+let score = 0;  // Variable to keep track of the game score
 
 export default class Cell {
   #x;
@@ -10,16 +10,16 @@ export default class Cell {
   #level;
 
   constructor(x, y, obstacleIndexX, obstacleIndexY,level) {
-    this.#x = x;
-    this.#y = y;
-    this.#obstacleIndexX=obstacleIndexX;
-    this.#obstacleIndexY=obstacleIndexY;
+    this.#x = x;  // Private property: x coordinate of the cell
+    this.#y = y;  // Private property: Y coordinate of the cell
+    this.#obstacleIndexX=obstacleIndexX; // Private property: x coordinate of the obstacle
+    this.#obstacleIndexY=obstacleIndexY; // Private property: y coordinate of the obstacle
     this.#level = level;
     // console.log(this.#obstacleIndexX+" is X\n",this.#obstacleIndexY+" is y");
   }
 
   get x() {
-    return this.#x;
+    return this.#x; // Returns the x coordinate of the cell
   }
 
   get y() {
@@ -27,18 +27,20 @@ export default class Cell {
   }
 
   get tile() {
-    return this.#tile;
+    return this.#tile; // Returns the tile object associated with the cell
   }
 
   set tile(value) {
-    this.#tile = value;
+    this.#tile = value; // Sets the tile object associated with the cell
     if (value == null) return;
     this.#tile.x = this.#x;
     this.#tile.y = this.#y;
 
+      // Check if the cell is an obstacle based on the level and obstacle coordinates
+
     if(this.#level == 3){
       if((this.#x==this.#obstacleIndexX) && (this.#y==this.#obstacleIndexY)){
-        this.#tile.isObstacle = true;
+        this.#tile.isObstacle = true; // Mark the tile as an obstacle
         value.tileElement.classList.add("obstacleBorder");
       } else{
         this.#tile.isObstacle = false;
@@ -47,6 +49,7 @@ export default class Cell {
     }
   }
 
+   // Getters and setters for mergeTile property 
   get mergeTile() {
     return this.#mergeTile;
   }
