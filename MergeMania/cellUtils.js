@@ -1,6 +1,6 @@
 export function createCellElements(gridElement,RANDOM_INDEX_X,RANDOM_INDEX_Y, girdSize, level) {
   const CELLS = [];
-  for (let i = 0; i < girdSize * girdSize; i++) {
+  for (let i = 0; i < girdSize * girdSize; i++) { //loop runs for each cell position in the grid
     const cell = document.createElement("div");
     cell.classList.add("cell");
     if( RANDOM_INDEX_X == i % girdSize && RANDOM_INDEX_Y == Math.floor(i / girdSize) && level == 3) {
