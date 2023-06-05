@@ -1,19 +1,25 @@
 import { formatTime } from "./formatTime.js";
 import { game } from "./script.js";
-import {tile_MoveUp, tile_MoveDown, tile_MoveLeft, tile_MoveRight,setupInput, sendGrid } from './script.js';
+import {
+  tile_MoveUp,
+  tile_MoveDown,
+  tile_MoveLeft,
+  tile_MoveRight,
+  setupInput,
+  sendGrid,
+} from "./script.js";
 import Grid from "./Grid.js";
 import Tile from "./tiles.js";
 
 export function setupLevel2() {
   const gridSize = 4;
-  const level=2;
-  
-  const GAMEBOARD = document.getElementById("container");
-  const GRID = new Grid(GAMEBOARD,gridSize,level);
-  GRID.randomEmptyCell().tile = new Tile(GAMEBOARD);
-  sendGrid(GRID,GAMEBOARD);
-  setupInput();
+  const level = 2;
 
+  const GAMEBOARD = document.getElementById("container");
+  const GRID = new Grid(GAMEBOARD, gridSize, level);
+  GRID.randomEmptyCell().tile = new Tile(GAMEBOARD);
+  sendGrid(GRID, GAMEBOARD);
+  setupInput();
 
   const timerDuration = 5; // x seconds
   let remainingTime = timerDuration;
@@ -21,8 +27,6 @@ export function setupLevel2() {
 
   const timerElement = document.getElementById("timer");
   timerElement.textContent = formatTime(remainingTime);
-
-  
 
   const timer = setInterval(() => {
     remainingTime--;
