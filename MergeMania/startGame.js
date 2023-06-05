@@ -3,6 +3,8 @@ import { setupLevel2 } from "./setupLevel2.js";
 import { setupLevel3 } from "./setupLevel3.js";
 
 export function startGame(level, gameContainer) {
+
+  //makes the game container visible
   gameContainer.classList.remove("hide");
 
   // Set up the game based on the selected level
