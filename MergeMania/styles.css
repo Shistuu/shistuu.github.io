@@ -25,8 +25,8 @@ body {
   margin-top: 80;
 }
 #warning-message {
-  color: rgb(139, 12, 12);
-}
+  color: rgb(185, 0, 0);
+text-shadow:2px 2px 2px #fff;}
 p {
   text-align: center;
 }
