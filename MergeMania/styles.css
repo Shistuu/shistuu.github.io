@@ -83,14 +83,13 @@ p {
   position: relative;
 }
 
-#score-container {
+#score-container { 
   font-size: 20px;
   text-align: center;
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
   color: rgb(226, 159, 15);
-  text-shadow: 3px 5px 7px rgb(28, 223, 184);
   font-weight: bold;
 }
 
