@@ -1,7 +1,6 @@
 import { createCellElements } from "./cellUtils.js";
 import Cell from "./Cell.js";
 
-// export const gridSize = 4;
 export const TILE = 15;
 export const GAP = 2.5;
 
