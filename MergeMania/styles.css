@@ -1,9 +1,4 @@
-/* set the grid size, cell size, and cell gap for the game board. */
-:root {
-  --grid-size: 4;
-  --cell-size: 100px;
-  --cell-gap: 10px;
-}
+
 body {
   margin: 0;
   font-size: 40px;

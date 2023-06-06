@@ -10,11 +10,6 @@ export function initializeLevels() {
   const SCORE_CONTAINER = document.getElementById("score-container");
   const TITLE_CONTAINER = document.querySelector(".title");
 
-  // Hide game-related elements initially
-  GAME_CONTAINER.style.display = "none";
-  TIMER.style.display = "none";
-  SCORE_CONTAINER.style.display = "none";
-
   // Add event listeners to each level button
   LEVEL_BUTTONS.forEach((button) => {
     button.addEventListener("click", handleLevelButtonClick);
