@@ -7,7 +7,7 @@
 body {
   margin: 0;
   font-size: 40px;
-  background-color: #333;
+  background-color: #3d3b3b;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,13 +52,13 @@ p {
   padding: 10px;
   width: 90px;
   margin: 20px;
-  color: teal;
+  color: rgb(24, 186, 186);
   font-weight: bold;
   background-color: #333;
 }
 
 .level-button:hover {
-  box-shadow: 8px 8px #8c8c8c;
+  box-shadow: 8px 8px #b0b0b0;
   transition: 0.3s;
   cursor: pointer;
 }
