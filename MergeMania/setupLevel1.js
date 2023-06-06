@@ -22,7 +22,6 @@ export function setupLevel1() {
   // Send the grid and gameboard to the server
   sendGrid(GRID, GAMEBOARD);
   setupInput();
-  debugger;
   // Check if there are no valid moves
   if ( 
     (!tile_MoveUp(GRID) &&
