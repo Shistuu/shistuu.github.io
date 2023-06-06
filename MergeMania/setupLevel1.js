@@ -41,8 +41,6 @@ export function setupLevel1() {
       });
 
       game.active = false; // Disable tile movement
-
-      return;
     }
   }, 1000);
 }
