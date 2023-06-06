@@ -1,6 +1,4 @@
-import Grid from "./Grid.js";
-import Tile from "./tiles.js";
-import { 
+import {
   tile_MoveUp,
   tile_MoveDown,
   tile_MoveLeft,
@@ -8,6 +6,8 @@ import {
   setupInput,
   sendGrid,
 } from "./script.js";
+import Grid from "./Grid.js";
+import Tile from "./tiles.js";
 
 export function setupLevel1() {
   const gridSize = 4;
@@ -22,22 +22,28 @@ export function setupLevel1() {
   // Send the grid and gameboard to the server
   sendGrid(GRID, GAMEBOARD);
   setupInput();
-  // Check if there are no valid moves
-  if ( 
-    (!tile_MoveUp(GRID) &&
-      !tile_MoveDown(GRID) &&
-      !tile_MoveLeft(GRID) &&
-      !tile_MoveRight(GRID))
-  ) {
-  
-    const modal = document.getElementById("game-over-modal");
-    modal.style.display = "flex";
+  const timer = setInterval(() => {
+    if (
+    
+      (!tile_MoveUp() &&
+        !tile_MoveDown() &&
+        !tile_MoveLeft() &&
+        !tile_MoveRight())
+    ) {
+      clearInterval(timer);
 
-    const playAgainBtn = document.getElementById("play-again-btn");
-    playAgainBtn.addEventListener("click", () => {
-      location.reload(); // Refresh the page
-      
-    });
-  }
-  return;
+      const modal = document.getElementById("game-over-modal");
+      modal.style.display = "flex";
+
+      const playAgainBtn = document.getElementById("play-again-btn");
+      playAgainBtn.addEventListener("click", () => {
+        location.reload(); // Refresh the page
+      });
+
+      game.active = false; // Disable tile movement
+
+      return;
+    }
+  }, 1000);
 }
+
