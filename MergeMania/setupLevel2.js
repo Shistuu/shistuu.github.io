@@ -1,6 +1,6 @@
 import { formatTime } from "./formatTime.js";
-import { game } from "./script.js";
 import {
+  game,
   tile_MoveUp,
   tile_MoveDown,
   tile_MoveLeft,

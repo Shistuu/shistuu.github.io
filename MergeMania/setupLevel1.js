@@ -24,11 +24,10 @@ export function setupLevel1() {
   setupInput();
   const timer = setInterval(() => {
     if (
-    
-      (!tile_MoveUp() &&
-        !tile_MoveDown() &&
-        !tile_MoveLeft() &&
-        !tile_MoveRight())
+      !tile_MoveUp() &&
+      !tile_MoveDown() &&
+      !tile_MoveLeft() &&
+      !tile_MoveRight()
     ) {
       clearInterval(timer);
 
@@ -44,4 +43,3 @@ export function setupLevel1() {
     }
   }, 1000);
 }
-

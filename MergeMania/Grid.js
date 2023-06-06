@@ -4,31 +4,62 @@ import Cell from "./Cell.js";
 export const TILE = 15;
 export const GAP = 2.5;
 
+function feasibilityCheck(x1, y1, arr) {
+  for (const element of arr) {
+    let x2 = element[0];
+    let y2 = element[1];
+    if (Math.abs(x1 - x2) <= 1 && Math.abs(y1 - y2) <= 1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function generateRandomCoordinates(gridSize, numOfRandomCoordinates) {
+  let arr = [
+    [
+      Math.floor(Math.random() * gridSize),
+      Math.floor(Math.random() * gridSize),
+    ],
+  ];
+  while (numOfRandomCoordinates > 1) {
+    let x1 = Math.floor(Math.random() * gridSize);
+    let y1 = Math.floor(Math.random() * gridSize);
+    if (feasibilityCheck(x1, y1, arr)) {
+      numOfRandomCoordinates--;
+      arr.push([x1, y1]);
+    }
+  }
+  return arr;
+}
+
 export default class Grid {
   #cells;
-  #RANDOM_INDEX_X;
-  #RANDOM_INDEX_Y;
+  #RANDOM_INDEX = [];
 
   constructor(gridElement, gridSize, level) {
     gridElement.style.setProperty("--grid-size", gridSize);
     gridElement.style.setProperty("--cell-size", `${TILE}vh`);
     gridElement.style.setProperty("--cell-gap", `${GAP}vh`);
-    this.#RANDOM_INDEX_X = Math.floor(Math.random() * gridSize);
-    this.#RANDOM_INDEX_Y = Math.floor(Math.random() * gridSize);
-    
+    this.#RANDOM_INDEX = generateRandomCoordinates(gridSize, gridSize / 2);
+
     // Create the grid cells by calling the createCellElements function,
     // map them to Cell objects, and assign them to the private #cells property
-    this.#cells = createCellElements(gridElement,this.#RANDOM_INDEX_X,this.#RANDOM_INDEX_Y,gridSize,level).map((cellElement, index) => {
+    this.#cells = createCellElements(
+      gridElement,
+      this.#RANDOM_INDEX,
+      gridSize,
+      level
+    ).map((cellElement, index) => {
       return new Cell(
         index % gridSize,
         Math.floor(index / gridSize),
-        this.#RANDOM_INDEX_X,
-        this.#RANDOM_INDEX_Y,
+        this.#RANDOM_INDEX,
         level
       );
     });
   }
-    // Getter for the cells property
+  // Getter for the cells property
   get cells() {
     return this.#cells;
   }
@@ -51,7 +82,7 @@ export default class Grid {
     }, []);
   }
 
-    // Getter for the empty cells in the grid
+  // Getter for the empty cells in the grid
   get #emptyCells() {
     return this.#cells.filter((cell) => cell.tile == null);
   }

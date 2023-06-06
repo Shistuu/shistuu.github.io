@@ -31,7 +31,8 @@ export default class Tile {
     this.tileElement.remove();
   }
 
-  waitForTransition(animation = false) { //returns a Promise that resolves when a transition or animation event is triggered 
+  waitForTransition(animation = false) {
+    //returns a Promise that resolves when a transition or animation event is triggered
     return new Promise((resolve) => {
       const eventName = animation ? "animationend" : "transitionend";
       this.tileElement.addEventListener(eventName, resolve, { once: true });

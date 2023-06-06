@@ -41,8 +41,8 @@ export function setupLevel3() {
     const gridSize = parseInt(gridSizeInput.value);
 
     // Check if the entered value is valid
-    if (isNaN(gridSize) || gridSize <= 4 ||gridSize>=10) {
-      alert("Invalid grid size. Please enter a number between  5 to 10.");
+    if (isNaN(gridSize) || gridSize < 4 || gridSize > 12) {
+      alert("Invalid grid size. Please enter grid between 4-12.");
     } else {
       // Remove the UI elements from the DOM
       document.body.removeChild(gridbox);
@@ -92,8 +92,6 @@ export function setupLevel3() {
           warningMessage.innerHTML = "";
         }
       }, 1000);
-
- 
     }
   });
 }

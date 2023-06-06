@@ -5,17 +5,14 @@ export default class Cell {
   #y;
   #tile;
   #mergeTile;
-  #obstacleIndexX;
-  #obstacleIndexY;
+  #obstacleIndex;
   #level;
 
-  constructor(x, y, obstacleIndexX, obstacleIndexY,level) {
+  constructor(x, y, obstacleIndex,level) {
     this.#x = x;  // Private property: x coordinate of the cell
     this.#y = y;  // Private property: Y coordinate of the cell
-    this.#obstacleIndexX=obstacleIndexX; // Private property: x coordinate of the obstacle
-    this.#obstacleIndexY=obstacleIndexY; // Private property: y coordinate of the obstacle
+    this.#obstacleIndex=obstacleIndex // Private property: x,y coordinate array of the obstacle
     this.#level = level;
-    // console.log(this.#obstacleIndexX+" is X\n",this.#obstacleIndexY+" is y");
   }
 
   get x() {
@@ -39,17 +36,21 @@ export default class Cell {
       // Check if the cell is an obstacle based on the level and obstacle coordinates
 
     if(this.#level == 3){
-      if((this.#x==this.#obstacleIndexX) && (this.#y==this.#obstacleIndexY)){
-        this.#tile.isObstacle = true; // Mark the tile as an obstacle
-        value.tileElement.classList.add("obstacleBorder");
-      } else{
-        this.#tile.isObstacle = false;
-        value.tileElement.classList.remove("obstacleBorder");
+      for(let i=0; i< this.#obstacleIndex.length;i++){
+        const coordinates = this.#obstacleIndex[i];
+        if((this.#x==coordinates[0]) && (this.#y==coordinates[1])){
+          this.#tile.isObstacle = true; // Mark the tile as an obstacle
+          value.tileElement.classList.add("obstacleBorder");
+          break;
+        } else{
+          this.#tile.isObstacle = false;
+          value.tileElement.classList.remove("obstacleBorder");
+        }
       }
     }
   }
 
-   // Getters and setters for mergeTile property 
+  // Getters and setters for mergeTile property 
   get mergeTile() {
     return this.#mergeTile;
   }
