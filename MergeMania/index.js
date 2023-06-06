@@ -8,6 +8,7 @@ export function initializeLevels() {
   const GAME_CONTAINER = document.getElementById("container");
   const TIMER = document.getElementById("timer");
   const SCORE_CONTAINER = document.getElementById("score-container");
+  const TITLE_CONTAINER = document.querySelector(".title");
 
   // Hide game-related elements initially
   GAME_CONTAINER.style.display = "none";
@@ -23,11 +24,12 @@ export function initializeLevels() {
     const LEVEL_BUTTON = e.target;
     const DATA_LEVEL = LEVEL_BUTTON.getAttribute("data-level");
 
+    TITLE_CONTAINER.style.display = "none";
     // Hide the level buttons
     LEVEL_CONTAINER.style.display = "none";
     // Show the game container and score container
     GAME_CONTAINER.style.display = "grid";
-    SCORE_CONTAINER.style.display = "block";
+    SCORE_CONTAINER.style.display = "flex";
 
     // Start the game or perform any other actions based on the selected level
     if (DATA_LEVEL === "2") {
