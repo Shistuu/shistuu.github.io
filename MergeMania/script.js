@@ -1,11 +1,11 @@
 import Tile from "./tiles.js";
 import { initializeLevels } from "./index.js";
-// import Grid from "./Grid.js";
+import Grid from "./Grid.js";
 
 initializeLevels();
 
 //object that has property active set to true
-export var game = {
+export let game = {
   active: true,
 };
 // Get the high score from local storage
@@ -15,8 +15,8 @@ if (highScore !== null) {
   const highScoreElement = document.getElementById("high-score");
   highScoreElement.innerText = highScore.toString();
 }
-var GRID;
-var GAMEBOARD;
+let GRID;
+let GAMEBOARD;
 export function sendGrid(grid, gameBoard){
   GRID = grid;
   GAMEBOARD = gameBoard;
