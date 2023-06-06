@@ -23,14 +23,21 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 50px;
   margin-top: 80;
-
+  text-align: center;
 }
+.title .c1{
+  color: rgb(209, 174, 35);
+}
+
 #warning-message {
   color: rgb(185, 0, 0);
-text-shadow:2px 2px 2px #fff;}
+  text-shadow: 2px 2px 2px #fff;
+}
+
 p {
   text-align: center;
   margin-top: -20px;
+  font-size: 20px;
 }
 
 .level-button {
@@ -61,7 +68,7 @@ p {
   display: grid;
 
   /* defines the number of columns and rows based on the --grid-size variable */
-  grid-template-columns: repeat(var(--grid-size), var(--cell-size)); 
+  grid-template-columns: repeat(var(--grid-size), var(--cell-size));
   grid-template-rows: repeat(var(--grid-size), var(--cell-size));
   background-color: #000000;
   gap: var(--cell-gap);
@@ -86,6 +93,7 @@ p {
   border-style: outset;
   padding: 10px;
 }
+
 .hscore-text {
   margin: 15px;
   padding: 10px;
@@ -167,7 +175,6 @@ h3 {
   color: rgb(255, 255, 255);
   margin-bottom: -5px;
   margin-top: 3px;
-
 }
 
 @keyframes fade-in {
