@@ -17,39 +17,52 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 50px;
   margin-top: 80;
-  text-align: center;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.title .c1 {
-  color: rgb(209, 174, 35);
+
+h2 {
+	font-size: 70px;
+	background-color: #b88e0e;
+	color: #ffffff;
+	display: block;
+	padding: .5em;
 }
+
+h2:nth-child(2) {
+	position: absolute;
+	background-color:  #ffffff;
+	color:#b88e0e;
+	clip-path: inset(-1% -1% 50% -1%); 
+}
+
 
 #warning-message {
   color: rgb(185, 0, 0);
   text-shadow: 2px 2px 2px #fff;
 }
 
-p {
-  font-weight: bold;
+/* p { */
+  /* font-family: 'Calligraffitti', cursive;
+  font-weight: 700;
+  font-size: 100px;
+  position: absolute;
+  text-shadow: -15px 5px 20px #ced0d3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  letter-spacing: 0.02em;
   text-align: center;
-  margin-top: -20px;
-  font-size: 25px;
-  background: linear-gradient(
-      to right,
-      rgba(255, 215, 255, 0) 0%,
-      rgba(225, 255, 255, 0.5) 20%,
-      rgba(255, 255, 255, 0) 61%
-    ),
-    linear-gradient(
-      rgb(33, 160, 24) 32%,
-      rgb(215, 236, 131) 70%,
-      rgb(255, 117, 117) 21%
-    );
-  background-clip: text;
-  /* it defines how far the background should extend within an element, here we set it to text */
-  -webkit-background-clip: text;
-  /*for browsers compatibility */
-  -webkit-text-fill-color: transparent;
-}
+  color: #F9f1cc;
+  text-shadow: 5px 5px 0px #FFB650, 
+    10px 10px 0px #FFD662, 
+    15px 15px 0px  #FF80BF, 
+    20px 20px 0px #EF5097, 
+    25px 25px 0px #6868AC, 
+    30px 30px 0px #90B1E0;
+} */
 input[type="number"] {
   margin-top: 300px;
   margin-bottom: 10px;
