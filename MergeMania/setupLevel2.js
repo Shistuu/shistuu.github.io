@@ -21,7 +21,7 @@ export function setupLevel2() {
   sendGrid(GRID, GAMEBOARD);
   setupInput();
 
-  const timerDuration = 5; // x seconds
+  const timerDuration = 55; // x seconds
   let remainingTime = timerDuration;
   const warningMessage = document.getElementById("warning-message");
 
