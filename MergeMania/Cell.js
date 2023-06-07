@@ -36,8 +36,8 @@ export default class Cell {
       // Check if the cell is an obstacle based on the level and obstacle coordinates
 
     if(this.#level == 3){
-      for(let i=0; i< this.#obstacleIndex.length;i++){
-        const coordinates = this.#obstacleIndex[i];
+      for(const element of this.#obstacleIndex){
+        const coordinates = element;
         if((this.#x==coordinates[0]) && (this.#y==coordinates[1])){
           this.#tile.isObstacle = true; // Mark the tile as an obstacle
           value.tileElement.classList.add("obstacleBorder");
