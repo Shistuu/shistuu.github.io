@@ -7,22 +7,22 @@ export default class Tile {
     this.value = value;
   }
 
-  get value() {
+  get value() { //value of the tile
     return this._value;
   }
 
-  set value(v) {
+  set value(v) { //shows the number in the tile
     this._value = v;
     this.tileElement.textContent = this.value;
     this.updateTileBackground();
   }
 
-  set x(value) {
+  set x(value) { //gives the x-coordinate of the tile
     this._x = value;
     this.tileElement.style.setProperty("--x", value);
   }
 
-  set y(value) {
+  set y(value) {//gives the y-coordinate of the tile
     this._y = value;
     this.tileElement.style.setProperty("--y", value);
   }
