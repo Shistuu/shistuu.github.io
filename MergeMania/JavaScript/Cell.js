@@ -1,5 +1,4 @@
 let score = 0;  // Variable to keep track of the game score
-
 export default class Cell {
   #x;
   #y;
@@ -82,16 +81,25 @@ export default class Cell {
   }
 }
 
+let highScore = localStorage.getItem("highScore");
+if (highScore === null) {
+  highScore = 0;
+} else {
+  highScore = parseInt(highScore, 10);
+}
 function updateScore() {
   const SCORE_ELEMENT = document.getElementById("current-score");
   SCORE_ELEMENT.innerText = score.toString();
 }
+// Display the initial high score
+const highScoreElement = document.getElementById("high-score");
+highScoreElement.innerText = highScore.toString();
+
+// Function to update the high score during gameplay
 function updateHighScore(score) {
-  let highScore = localStorage.getItem("highScore");
-  if (highScore === null || score > highScore) {
+  if (score > highScore) {
     highScore = score;
     localStorage.setItem("highScore", highScore);
+    highScoreElement.innerText = highScore.toString();
   }
-  const HIGHSCORE_ELEMENT = document.getElementById("high-score");
-  HIGHSCORE_ELEMENT.innerText = highScore.toString();
 }

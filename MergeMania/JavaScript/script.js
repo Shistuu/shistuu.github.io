@@ -8,14 +8,6 @@ export let game = {
   active: true,
 };
 
-// Get the high score from local storage
-let highScore = localStorage.getItem("highScore");
-if (highScore !== null) {
-  highScore = parseInt(highScore, 10); //convert from string to decimal value
-  const highScoreElement = document.getElementById("high-score");
-  highScoreElement.innerText = highScore.toString();
-}
-
 let GRID;
 let GAMEBOARD;
 
@@ -150,3 +142,4 @@ function tile_Move(cells) {
     });
   });
 }
+
