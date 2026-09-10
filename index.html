@@ -1,636 +1,642 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-	<title>Shistata Subedi's Portfolio</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
-	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.css">
-
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
-
-	<link rel="stylesheet" href="css/aos.css">
-
-	<link rel="stylesheet" href="css/ionicons.min.css">
-
-	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/style.css">
-
-	<style>
-		.teal-text {
-			color: teal !important;
-		}
-
-		/* Animation styles */
-		#typing-animation {
-			position: relative;
-			font-size: 30px;
-			font-weight: bold;
-			color: rgb(255, 255, 255);
-			overflow: hidden;
-			white-space: nowrap;
-			animation: typing 1s steps(10, end) infinite;
-		}
-
-		#typing-animation:before {
-			content: "";
-			top: 0;
-			left: 0;
-			width: 0;
-			height: 100%;
-			background-color: #ccc;
-			animation: typing-cursor 0.5s ease-in-out infinite;
-		}
-
-		.text-justify {
-			text-align: justify;
-		}
-
-		.text-teal {
-			color: teal;
-		}
-
-		.custom-para {
-			line-height: 1.6;
-			font-size: 16px;
-
-		}
-
-		@keyframes typing {
-			from {
-				width: 0;
-			}
-
-			to {
-				width: 100%;
-			}
-		}
-
-		@keyframes typing-cursor {
-			from {
-				width: 5px;
-			}
-
-			to {
-				width: 0;
-			}
-		}
-
-		/* project image zoom effect */
-		.zoom-effect {
-			overflow: hidden;
-			transition: transform 0.3s ease-out;
-		}
-
-		.zoom-effect:hover {
-			transform: scale(1.1);
-		}
-	</style>
-</head>
-
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-		<div class="container">
-			<a class="navbar-brand" href="index.html">Shistata Subedi</a>
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
-
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav nav ml-auto">
-					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-					<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
-	<section id="home-section" class="hero">
-		<div class="home-slider  owl-carousel">
-			<div class="slider-item ">
-				<div class="overlay"></div>
-				<div class="container">
-					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-						data-scrollax-parent="true">
-						<div class="one-third js-fullheight order-md-last img"
-							style="background-image:url(images/bg_1.png); background-size: contain;">
-							<div class="overlay"></div>
-						</div>
-						<div class="one-forth d-flex  align-items-center ftco-animate"
-							data-scrollax=" properties: { translateY: '70%' }">
-							<div class="text">
-								<span class="subheading">Welcome to my Portfolio!</span>
-								<h1 class="mb-4 mt-3">I'm <span>Shistata Subedi</span></h1>
-
-								<!-- Element to contain animated typing -->
-								<span id="typing-animation"></span>
-
-								<script>
-
-									// Initialize the typing animation
-									const typingAnimationElement = document.getElementById('typing-animation');
-
-									// Create an array of typing text
-									const typingTexts = [
-										'Researcher     ',
-										'Software Developer   ',
-										'Engineer    ',
-									];
-
-									// Create a function to display the typing animation for a given text
-									function playTypingAnimation(text) {
-										// Loop through each character and add it to the element
-										for (let i = 0; i < text.length; i++) {
-											setTimeout(() => {
-												typingAnimationElement.textContent += text[i];
-											}, i * 100); // Increase the delay to slow down the typing animation
-										}
-
-										// Once the animation is complete, reset the text and start over
-										setTimeout(() => {
-											typingAnimationElement.textContent = '';
-											playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-										}, text.length * 100);
-									}
-
-									// Start the typing animation loop
-									playTypingAnimation(typingTexts[0]);
-
-								</script>
-
-								<br>
-								<br>
-								<h2>A Curious Mind</h2>
-								<p><a href="https://www.linkedin.com/in/shistatasubedi"
-										class="btn btn-primary py-3 px-4">LinkedIn</a>
-									<a href="https://github.com/shistuu"
-										class="btn btn-white btn-outline-white py-3 px-4">Github</a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-		<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-			
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-										<div class="about-img">
-											<img src="images/bg_11.jpg" class="img-fluid" alt="">
-										</div>
-									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-										<div class="about-info">
-											<p><span class="title-s">Name: </span>Shistata Subedi</p>
-											<p><span class="title-s">Experienced Role: </span> Software Developer</p>
-											<p><span class="title-s">Work Experience: </span> 1.2 years</p>
-											<p><span class="title-s">Address: </span> Eugene, Oregon</p>
-										</div>
-									</div>
-								</div>
-
-								<div class="skill-mf">
-									<p class="title-s">Technical Skills</p>
-									<div class="technical-skills">
-										<ul>
-
-											<li><strong class="teal-text">Programming/Scripting:</strong> Python, Java,
-												JavaScript, TypeScript, Go, HTML5, CSS</li>
-											<li><strong class="teal-text">Frontend Frameworks:</strong> React.js, Redux,
-												SASS, Polymer.js, LIT Element</li>
-											<li><strong class="teal-text">AI/ML:</strong> Deep Learning, Transformers
-												(BERT, GPT), LLM Optimization, XAI (SHAP, LIME, Counterfactuals), Model
-												Evaluation & Benchmarking</li>
-											<li><strong class="teal-text">NLP:</strong> Document Understanding, Named
-												Entity Recognition (NER), Sentiment Analysis, Topic Modeling</strong>
-											<li><strong class="teal-text">Networking & Distributed Systems:</strong>
-												Edge Computing, Network Optimization, Distributed Systems, Byzantine
-												Fault Tolerance (BFT)</li>
-											<li><strong class="teal-text">Data Analysis:</strong> SQL, Data
-												Visualization</li>
-											<li><strong class="teal-text">Backend Technologies:</strong> Node.js,
-												Express.js</li>
-											<li><strong class="teal-text">Databases and Infrastructure:</strong> MySQL,
-												MongoDB, API Design, System Architecture (basic)</li>
-											<li><strong class="teal-text">Tools & Version Control:</strong> Git, GitHub,
-												Postman, JIRA, LaTeX, MATLAB</li>
-											<li><strong class="teal-text">Product Development & Delivery:</strong> Agile
-												(Scrum, Kanban), Requirements Gathering, Roadmapping, Cross-functional
-												Team Collaboration, User Stories, Feature Prioritization</li>
-										</ul>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
-
-								<p class="text-justify custom-para">
-
-									I am a <strong class="text-teal">software developer</strong> and systems thinker who
-									bridges technical execution with
-									product strategy. With industry experience building production systems and
-									concurrent research in distributed technologies, I excel at translating complex
-									technical concepts into user value.<br><br>
-									Currently advancing blockchain infrastructure research with <a
-										href="https://gupta-suyash.github.io/" class="text-teal font-weight-bold">Prof.
-										Suyash Gupta</a>
-									<strong class="text-teal"> </strong> at University of Oregon, developing segment
-									tree architectures for efficient historical data queries in Ethereum systems. This
-									work focuses on transparency mechanisms and explainable system decisions—directly
-									applicable to product challenges in fintech, blockchain, and distributed
-									platforms.<br><br>
-									My industry background as a
-									provides practical grounding for research insights, while my research experience
-									brings cutting-edge perspective to product development. I'm passionate about roles
-									where I can combine technical depth with product vision, creating systems that are
-									both powerful and user-centered.
-								</p>
-
-
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<ul>
-										<li class="d-flex"><span>Area of Focus:</span> <span> Product Strategy, Software
-												Development, Cross-Functional Collaboration</span></li>
-										<li class="d-flex"><span>Industry Focus:</span> <span>AI/ML Products,
-												Blockchain/Web3, Data-Driven Systems</span></li>
-
-										<li class="d-flex"><span>Interest:</span> <span>Cooking, Traveling, Food
-												Culture, Art
-												& Crafts (DIY)</span></li>
-									</ul>
-								</ul>
-							</div>
-						</div>
-
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="4">0</span> <span>+</span>
-									<span>&nbsp; Projects completed</span>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-section ftco-no-pb" id="resume-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-10 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Resume</h1>
-					<h2 class="mb-4">Resume</h2>
-					<p>Working at the intersection of infrastructure engineering, product strategy, and applied research
-						to advance transparency and scalability in decentralized systems. Current focus includes segment
-						tree–based data architectures for efficient access to historical blockchain state and
-						interpretable ML systems for anomaly detection—work that bridges real-world product needs with
-						rigorous technical design.
-					</p>
-				</div>
-			</div>
-
-			<div class="row">
-				<h1 class="big-4">Experience</h1>
-				<div class="underline"></div>
-			</div>
-			<br>
-
-			<div class="row">
-				<div class="d-flex">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2024-Present</span>
-						<h2>Graduate Research Work</h2>
-						<span class="position">University of Oregon</span>
-						<p class="mt-4 ">
-							<strong>
-								Decentralized Systems& Data Structures:</strong>
-						<ul>
-							<li>Conducting research on efficient storage data structures for decentralized systems.</li>
-							<li>Exploring the use of segment trees to enable range queries over distributed data.</li>
-							<li>Aiming to support the scalable retrieval of historical transaction states in
-								decentralized environments.</li>
-							<li>Investigating trade-offs in performance, consistency, and storage overhead in
-								distributed architectures.
-							</li>
-						</ul>
-						</p>
-						<p class="mt-4">
-							<strong>
-								Explainable AI & Large Language Models (LLMs):</strong>
-						<ul>
-							<li>Researching a novel framework for detecting and explaining anomalies in the behavior of
-								LLMs, focusing on semantic analysis tools and chatbot systems.</li>
-							<li>Investigated attention mechanisms, tokenization, and response generation to improve
-								interpretability and transparency in LLM-based systems.</li>
-							<li>Conducted a comprehensive review of global and local explainability methods (e.g., SHAP,
-								LIME, counterfactuals) and evaluated their effectiveness for anomaly detection tasks.
-							</li>
-
-						</ul>
-						</p>
-
-					</div>
-				</div>
-				<div class="d-flex">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2023-2024</span>
-						<h2>Software Engineer</h2>
-						<span class="position">Leapfrog Technology Inc. </span>
-						<p class="mt-4">Leapfrog Technology Inc. is an international technology partner that specializes
-							in AI-driven innovation, product development, and scalable enterprise solutions.
-						<ul>
-							<li>Streamlined the software development lifecycle, reducing project timelines by 20%.</li>
-							<li>Optimized RESTful APIs, achieving 30% faster response times, enhancing user satisfaction
-								and engagement.</li>
-							<li>Designed and implemented backend APIs for the application using Micronaut.</li>
-							<li>Expanded product functionality to meet evolving business requirements.</li>
-							<li>Led high-quality data annotation, reducing anomalies and boosting model performance.
-							</li>
-						</ul>
-
-						</p>
-					</div>
-
-				</div>
-			</div>
-
-			<br>
-			<br>
-
-			<div class="row">
-				<h1 class="big-4">Education</h1>
-				<div class="underline"></div>
-			</div>
-			<br>
-
-			<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2024-Present</span>
-						<h2>Graduate Student</h2>
-						<div><strong class="text-teal">Computer Science</strong></div>
-						<div><span class="position">University of Oregon</span></div>
-					</div>
-				</div>
-
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2019-2023</span>
-						<h2>Bachelor of Technology</h2>
-						<div><strong class="text-teal">Computer Science and Engineering</strong></div>
-						<div><span class="position">Vellore Institute of Technology</span></div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</section>
-	<section class="ftco-section" id="project-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-5">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Projects</h1>
-					<h2 class="mb-4">Projects</h2>
-					<p>Below are some of my projects.</p>
-				</div>
-			</div>
-			<div class="row d-flex">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="#">Aspen Biosciences</a></h3>
-							<p>Developed a comprehensive drug discovery management system for scientists, optimizing
-								research and experiment workflows. Integrated project management, chemistry workflows,
-								and inventory tracking to enhance the discovery pipeline.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="#">Vyaguta ERP System</a></h3>
-							<p>Led the optimization of an ERP dashboard for employee and project management. Improved
-								system performance and operational efficiency using SQL-based database optimizations.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="#">VIT Connects</a></h3>
-							<p>Designed a cross-platform app using Flutter and Firebase for students and faculty at VIT.
-								Focused on interaction, course collaboration, and task management while implementing HCI
-								principles through usability testing.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<br>
-			<div class="row d-flex justify-content-center">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="#" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://github.com/Shistuu/Time-Delivery-Problem">Time Delivery
-									Problem</a></h3>
-							<p>Developed a route optimization algorithm for the Traveling Salesman Problem, improving
-								logistics efficiency. Focused on route planning within delivery systems to minimize
-								operational costs.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-		<div class="container">
-			<div class="row d-md-flex align-items-center">
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18">
-						<div class="text">
-							<strong class="number" data-number="3">0</strong>
-							<span>Merit-Based Scholarships</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18">
-						<div class="text">
-							<strong class="number" data-number="5">0</strong>
-							<span>Years of Leadership and Mentorship</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18">
-						<div class="text">
-							<strong class="number" data-number="5">0</strong>
-							<span>Research and Development Projects</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18">
-						<div class="text">
-							<strong class="number" data-number="165">+</strong>
-							<span>Competitive Programming</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-					<div class="block-18">
-						<div class="text">
-							<strong class="number" data-number="24">0</strong>
-							<span>Cups of Tea</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<div class="container">
-				<div class="row justify-content-center">
-					<!-- GitHub Section -->
-					<div class="col-md-6 ftco-animate text-center d-flex flex-column align-items-center">
-						<h2>Check out my latest projects on <span>GitHub!</span></h2>
-						<div class="heading">
-							<br>
-							<p><a href="https://github.com/shistuu" target="_blank"
-									class="btn btn-primary py-3 px-5">GitHub</a></p>
-						</div>
-					</div>
-
-					<!-- Leetcode Section -->
-					<div class="col-md-6 ftco-animate text-center d-flex flex-column align-items-center">
-						<h2>Explore My Coding Challenges & Solutions on <span>Leetcode</span></h2>
-						<br>
-						<p><a href="https://leetcode.com/shistuu" target="_blank"
-								class="btn btn-primary py-3 px-5">Leetcode</a></p>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</section>
-
-
-
-	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Contact</h1>
-					<h2 class="mb-4">Contact Me</h2>
-					<p>Below are the details to reach out to me!</p>
-				</div>
-			</div>
-
-			<div class="row d-flex contact-info mb-5 justify-content-between">
-				<!-- Address -->
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
-						</div>
-						<h3 class="mb-4">Address</h3>
-						<p>Eugene, Oregon</p>
-						<p>United States</p>
-					</div>
-				</div>
-
-				<!-- Email Address -->
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
-						</div>
-						<h3 class="mb-4">Email Address</h3>
-						<p><a href="mailto:shistatasubedi24@gmail.com">shistatasubedi24@gmail.com</a></p>
-					</div>
-				</div>
-
-				<!-- Download Resume -->
-
-				<div class="col-md-4 d-flex ftco-animate">
-					<a href="https://docs.google.com/document/d/1CBVHtODYNRW3PgM2NMCDyhFtXapRwmTI-lA-4tWT7P4/edit?usp=sharing"
-						target="_blank">
-						<div class="align-self-stretch box p-4 text-center">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="icon-globe"></span>
-							</div>
-							<h3 class="mb-4">Download Resume</h3>
-						</div>
-					</a>
-				</div>
-
-			</div>
-		</div>
-	</section>
-
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
-		</svg></div>
-
-
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
-
-	<script src="js/main.js"></script>
-
-</body>
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f7f4" />
+    <title>Shistata Subedi — Systems, storage & a little curiosity</title>
+    <meta
+      name="description"
+      content="Shistata Subedi is a graduate researcher at the University of Oregon working on distributed systems, verifiable storage, and service reliability, with production software engineering experience."
+    />
+    <meta property="og:title" content="Shistata Subedi — Systems Researcher" />
+    <meta
+      property="og:description"
+      content="Distributed systems, verifiable storage, and the engineering behind them. Explore my research and selected work."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/portfolio.css" />
+    <script src="js/portfolio.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="#home" aria-label="Shistata Subedi, home"
+        >Shistata Subedi<span aria-hidden="true">.</span></a
+      >
+      <button
+        class="menu-toggle"
+        aria-controls="navigation"
+        aria-expanded="false"
+        hidden
+      >
+        Menu <span aria-hidden="true">＋</span>
+      </button>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="#research">Research</a><a href="#experience">Experience</a
+        ><a href="#recognition">Recognition</a><a href="#about">About</a>
+        <a class="nav-contact" href="#contact"
+          >Let’s talk <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero container" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Graduate researcher · University of Oregon</p>
+          <h1 id="hero-title">
+            Big questions.<br />Careful systems.<br /><em>A curious mind.</em>
+          </h1>
+          <p class="hero-intro">
+            I’m Shistata. I build systems that make data verifiable—and study
+            how to keep distributed services reliable when things get
+            complicated.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#research"
+              >Explore my work <span aria-hidden="true">↓</span></a
+            ><a
+              class="text-link"
+              href="assets/Shistata-Subedi-Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >Resume <span class="small">PDF</span>
+              <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <p class="hero-footnote">
+            <span class="tiny-rule" aria-hidden="true"></span> Distributed
+            systems / Verifiable storage / Reliability
+          </p>
+        </div>
+        <figure class="portrait">
+          <div class="portrait-frame">
+            <img
+              src="assets/shistata-portrait.png"
+              alt="Shistata Subedi"
+              width="1254"
+              height="1254"
+              fetchpriority="high"
+            />
+          </div>
+          <figcaption>
+            <span>Eugene, Oregon</span
+            ><span>A little curiosity goes a long way.</span>
+          </figcaption>
+        </figure>
+      </section>
+      <div class="research-strip container" aria-label="Research approach">
+        <span>How I work</span>
+        <p>Ask a better question.</p>
+        <span aria-hidden="true">/</span>
+        <p>Build the system.</p>
+        <span aria-hidden="true">/</span>
+        <p>Measure the trade-offs.</p>
+      </div>
+
+      <section
+        class="section container"
+        id="research"
+        aria-labelledby="research-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / Selected research & systems</p>
+            <h2 id="research-title">Under the <em>hood.</em></h2>
+          </div>
+          <p>
+            Historical data. Cryptographic guarantees.<br />Systems that hold up
+            under pressure.
+          </p>
+        </div>
+        <article class="featured-project" id="smaran">
+          <div class="project-content">
+            <div class="project-meta">
+              <span>01 — Smaran</span
+              ><span>Authenticated time-travel queries</span>
+            </div>
+            <h3>The past should<br />come with <em>proof.</em></h3>
+            <p>
+              How did a record change over a time interval? Smaran returns its
+              committed versions with proofs of correctness and completeness—for
+              public-key histories in key transparency and historical account
+              state in decentralized ledgers.
+            </p>
+            <p class="contribution">
+              <strong>My work · Co-first author</strong> I work on authenticated
+              data structures, Ethereum-state tooling, and Go-based evaluation
+              of query performance, proof costs, and storage overhead.
+            </p>
+            <ul class="tags" aria-label="Smaran methods and applications">
+              <li>Segment trees + vector commitments</li>
+              <li>Key transparency</li>
+              <li>Ethereum / Geth</li>
+            </ul>
+            <p style="margin-top: 20px">
+              <a
+                class="text-link"
+                href="https://github.com/distopialabs/Smaran/blob/main/SmaranFullPaper.pdf"
+                target="_blank"
+                rel="noopener"
+                >Read the full paper <span class="small">PDF</span>
+                <span aria-hidden="true">↗</span></a
+              >
+            </p>
+          </div>
+          <figure
+            class="system-visual range-visual"
+            aria-labelledby="range-title"
+          >
+            <div class="visual-heading">
+              <span>SMARAN / HISTORICAL RANGE QUERY</span>
+            </div>
+            <div class="query-label" id="range-title">
+              One record.<br /><em>A whole interval.</em>
+            </div>
+            <div class="range-example">
+              <p class="range-request">Request: record k, interval [t₂, t₅]</p>
+              <div
+                class="range-timeline"
+                aria-label="Committed history of one record: versions v1 to v6. The requested interval includes all four versions v2, v3, v4, and v5."
+              >
+                <div><span>v₁</span><small>t₁</small></div>
+                <div class="in-range"><span>v₂</span><small>t₂</small></div>
+                <div class="in-range"><span>v₃</span><small>t₃</small></div>
+                <div class="in-range"><span>v₄</span><small>t₄</small></div>
+                <div class="in-range"><span>v₅</span><small>t₅</small></div>
+                <div><span>v₆</span><small>t₆</small></div>
+                <p class="range-bracket">
+                  All versions in the requested interval
+                </p>
+              </div>
+              <div class="range-result">
+                <span aria-hidden="true">↓</span>
+                <p>⟨v₂, v₃, v₄, v₅⟩ + compact proofs</p>
+                <small>Verify against the agreed commitment</small>
+              </div>
+            </div>
+            <figcaption class="visual-caption">
+              A public-key history or an account’s historical state.<br />Conceptual
+              range example; not the internal tree layout.
+            </figcaption>
+          </figure>
+          <details class="project-details">
+            <summary>
+              Inside the research <span aria-hidden="true">＋</span>
+            </summary>
+            <div class="detail-grid">
+              <div>
+                <h4>The design</h4>
+                <p>
+                  Segment trees and vector commitments authenticate intervals. A
+                  hierarchical architecture scales with growing histories;
+                  versioned vector commitments avoid redundant state during
+                  unchanged epochs.
+                </p>
+              </div>
+              <div>
+                <h4>The guarantee</h4>
+                <p>
+                  A constant number of fixed-size proofs, independent of range
+                  and history length. Returned values still grow with the range
+                  and require linear validation. Clients verify against history
+                  fixed by a separate agreement layer; availability is outside
+                  Smaran’s scope.
+                </p>
+              </div>
+              <div>
+                <h4>The applications</h4>
+                <p>
+                  Key transparency: audit the public-key versions associated
+                  with an identity over an interval. Ledgers: verify historical
+                  account versions across blocks. The paper evaluates both
+                  settings, including integration with Ethereum’s Geth client.
+                </p>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <div class="project-grid">
+          <article class="project-card" id="cry-for-help">
+            <div class="project-meta">
+              <span>02 — Cry-for-Help</span><span>Ongoing research</span>
+            </div>
+            <div
+              class="mini-visual reliability-visual"
+              aria-label="Conceptual flow: an overloaded service requests help and redirects fresh work"
+            >
+              <span class="node distressed">Overload</span
+              ><span class="connection" aria-hidden="true">→</span
+              ><span class="node">Ask for help</span
+              ><span class="connection" aria-hidden="true">→</span
+              ><span class="node helper">Redirect</span>
+            </div>
+            <h3>A little help.<br />A more resilient system.</h3>
+            <p>
+              Studying how distributed services can escape self-sustaining
+              overload, where retries and growing queues make recovery harder.
+            </p>
+            <p class="contribution">
+              <strong>My work</strong> Coordination protocols and experiments
+              for distress signaling, helper activation, and fresh-work
+              redirection.
+            </p>
+            <ul class="tags">
+              <li>Distributed reliability</li>
+              <li>Metastability</li>
+              <li>Overload recovery</li>
+            </ul>
+            <details class="project-details">
+              <summary>
+                Research details <span aria-hidden="true">＋</span>
+              </summary>
+              <div class="detail-body">
+                <p>
+                  I investigate an in-network coordination approach in which
+                  distressed servers request help and activate helper nodes over
+                  shared state. Experiments examine queue growth, timeouts,
+                  latency spikes, and recovery under capacity degradation.
+                </p>
+                <p>
+                  Current work also explores OS-assisted distress detection,
+                  combining request backlog and age with useful progress and
+                  execution signals. This is ongoing research, not a
+                  demonstrated recovery guarantee.
+                </p>
+              </div>
+            </details>
+          </article>
+          <article class="project-card" id="minispanner">
+            <div class="project-meta">
+              <span>03 — MiniSpanner</span><span>Systems implementation</span>
+            </div>
+            <div
+              class="mini-visual shards"
+              aria-label="Conceptual diagram of three replicated shards"
+            >
+              <div><span>Shard 01</span><i aria-hidden="true">● ● ●</i></div>
+              <div><span>Shard 02</span><i aria-hidden="true">● ● ●</i></div>
+              <div><span>Shard 03</span><i aria-hidden="true">● ● ●</i></div>
+            </div>
+            <h3>Separate shards.<br />Shared agreement.</h3>
+            <p>
+              A sharded, replicated architecture for Apache ResilientDB,
+              exploring how local consensus and coordination across shards fit
+              together.
+            </p>
+            <p class="contribution">
+              <strong>My work</strong> Implemented replication within shards and
+              transaction coordination across shard leaders.
+            </p>
+            <ul class="tags">
+              <li>ResilientDB</li>
+              <li>PBFT</li>
+              <li>Replication</li>
+            </ul>
+            <details class="project-details">
+              <summary>
+                Implementation details <span aria-hidden="true">＋</span>
+              </summary>
+              <div class="detail-body">
+                <p>
+                  The implementation uses PBFT within each shard and explores
+                  3PC and Proof-of-Execution in coordination across shard
+                  leaders. The project brings together partitioning,
+                  replication, and distributed agreement in a working systems
+                  architecture.
+                </p>
+                <a
+                  class="text-link"
+                  href="https://github.com/nepal80m/incubator-resilientdb/tree/nepal80m/assignment4#"
+                  target="_blank"
+                  rel="noopener"
+                  >View MiniSpanner on GitHub
+                  <span aria-hidden="true">↗</span></a
+                >
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="experience-section"
+        id="experience"
+        aria-labelledby="experience-title"
+      >
+        <div class="container section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">02 / Beyond the prototype</p>
+              <h2 id="experience-title">
+                Research depth.<br /><em>Engineering instincts.</em>
+              </h2>
+            </div>
+            <p>
+              I like understanding a system—and getting<br />the details right
+              enough to make it work.
+            </p>
+          </div>
+          <div class="experience-list">
+            <article class="experience-row">
+              <div class="role-context">
+                <span class="date">2024 — Present</span
+                ><span>University of Oregon</span>
+              </div>
+              <div>
+                <h3>Graduate Researcher</h3>
+                <p>
+                  I design and evaluate systems for verifiable historical
+                  queries and distributed-service reliability, connecting data
+                  structures and cryptographic mechanisms with implementation
+                  and measurement.
+                </p>
+                <a class="text-link" href="#research"
+                  >Explore the research <span aria-hidden="true">↑</span></a
+                >
+              </div>
+              <span class="role-index" aria-hidden="true">01</span>
+            </article>
+            <article class="experience-row">
+              <div class="role-context">
+                <span class="date">2023 — 2024</span
+                ><span>Leapfrog Technology</span>
+              </div>
+              <div>
+                <h3>Software Engineer</h3>
+                <p>
+                  Built backend APIs and production web interfaces for
+                  scientific and enterprise workflows. Optimized REST APIs
+                  through endpoint refactoring, query tuning, and profiling,
+                  reducing response times by 30%.
+                </p>
+                <div class="industry-work">
+                  <details>
+                    <summary>
+                      Aspen Biosciences <span aria-hidden="true">＋</span>
+                    </summary>
+                    <p>
+                      Built features for a drug-discovery management platform,
+                      integrating project management, experiment tracking,
+                      chemistry workflows, and inventory management.
+                    </p>
+                  </details>
+                  <details>
+                    <summary>
+                      Vyaguta ERP <span aria-hidden="true">＋</span>
+                    </summary>
+                    <p>
+                      Developed backend APIs and responsive employee- and
+                      project-management dashboards. Optimized SQL queries and
+                      REST endpoints to improve performance and reliable data
+                      access.
+                    </p>
+                  </details>
+                </div>
+              </div>
+              <span class="role-index" aria-hidden="true">02</span>
+            </article>
+            <article class="experience-row">
+              <div class="role-context">
+                <span class="date">2024 — Present</span
+                ><span>University of Oregon</span>
+              </div>
+              <div>
+                <h3>Teaching Assistant</h3>
+                <p>
+                  Delivered web programming lectures and hands-on debugging labs
+                  for 140+ students. There’s something satisfying about helping
+                  someone turn “why won’t this work?” into “oh, that makes
+                  sense.”
+                </p>
+              </div>
+              <span class="role-index" aria-hidden="true">03</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section container"
+        id="recognition"
+        aria-labelledby="recognition-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">03 / Research & recognition</p>
+            <h2 id="recognition-title">
+              Work that goes<br /><em>into the world.</em>
+            </h2>
+          </div>
+          <p>
+            Papers, presentations, and the community<br />that makes good
+            research possible.
+          </p>
+        </div>
+        <div class="recognition-grid">
+          <div>
+            <h3 class="list-heading">Research outputs</h3>
+            <!-- Venue and acceptance information below is supplied by the research resume. Confirm final bibliographic details before publishing. -->
+            <article class="publication">
+              <div class="publication-meta">
+                <span>Paper accepted</span><span>SOSP 2026</span>
+              </div>
+              <h4>Smaran: Serving Authenticated Time-Travel Queries</h4>
+              <p>
+                Authenticated historical range queries for key transparency and
+                decentralized ledgers.
+              </p>
+              <a
+                class="text-link"
+                href="https://github.com/distopialabs/Smaran/blob/main/SmaranFullPaper.pdf"
+                target="_blank"
+                rel="noopener"
+                >Read the full paper <span class="small">PDF</span>
+                <span aria-hidden="true">↗</span></a
+              >
+            </article>
+            <article class="publication">
+              <div class="publication-meta">
+                <span>SRC poster accepted</span><span>SOSP 2026</span>
+              </div>
+              <h4>
+                HotSwap: Workload-Adaptive Placement for Authenticated State
+              </h4>
+              <p>
+                Hot/cold placement in KZG sub-vectors reduces unnecessary
+                witness refreshes. Authenticated migration binds both values and
+                locations to one published root; end-to-end evaluation remains
+                ongoing.
+              </p>
+            </article>
+          </div>
+          <div class="recognition-side">
+            <h3 class="list-heading">Selected honors</h3>
+            <div class="award">
+              <span class="date">2024–2025</span>
+              <h4>Lokey Award for Graduate Excellence</h4>
+              <p>University of Oregon</p>
+            </div>
+            <div class="award">
+              <span class="date">2025</span>
+              <h4>Frank Vignola Microgrant</h4>
+              <p>Eugene–Kathmandu Sister City Association</p>
+            </div>
+            <div class="award">
+              <span class="date">2019–2023</span>
+              <h4>COMPEX Scholarship</h4>
+              <p>Full undergraduate scholarship · Indian Embassy</p>
+            </div>
+            <div class="award">
+              <span class="date">2025</span>
+              <h4>Middleware Travel Grant</h4>
+              <p>Support for conference participation and presentation</p>
+            </div>
+            <h3 class="list-heading service-heading">Academic service</h3>
+            <ul class="service-list">
+              <li>
+                <strong>Artifact Evaluation Committee</strong
+                ><span>Middleware 2025</span>
+              </li>
+              <li><strong>Shadow Reviewer</strong><span>ACM IMC 2025</span></li>
+              <li>
+                <strong>Reviewer</strong
+                ><span
+                  >IEEE Transactions on Dependable and Secure Computing</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="container section about-grid">
+          <div>
+            <p class="eyebrow">04 / The person behind the proofs</p>
+            <h2 id="about-title">
+              Serious about systems.<br /><em>Not always serious.</em>
+            </h2>
+            <p class="about-lead">
+              I’m a graduate researcher at the University of Oregon, working
+              with
+              <a
+                href="https://gupta-suyash.github.io/"
+                target="_blank"
+                rel="noopener"
+                >Prof. Suyash Gupta</a
+              >
+              on distributed systems and verifiable storage.
+            </p>
+            <p>
+              Before graduate school, I worked as a software engineer at
+              Leapfrog Technology. That experience still shapes how I approach
+              research: understand the problem, build something concrete, and
+              look closely at where it breaks.
+            </p>
+            <p>
+              Outside the terminal, I enjoy cooking, traveling, exploring food
+              cultures, and making things by hand. Apparently, debugging and DIY
+              both involve wondering where that extra piece came from.
+            </p>
+            <div class="personal-note">
+              <span class="eyebrow"
+                >A small, non-peer-reviewed observation</span
+              >
+              <p id="aside-text" aria-live="polite">
+                My most reliable distributed system is a group chat deciding
+                where to eat. Just kidding. It never reaches consensus.
+              </p>
+              <button class="text-link aside-button" id="new-aside" hidden>
+                One more thought <span aria-hidden="true">↻</span>
+              </button>
+            </div>
+          </div>
+          <aside class="about-sidebar">
+            <div>
+              <h3 class="list-heading">A few things I work with</h3>
+              <dl class="toolkit">
+                <dt>Systems</dt>
+                <dd>
+                  Distributed systems, authenticated data structures, verifiable
+                  storage, replication
+                </dd>
+                <dt>Implementation</dt>
+                <dd>Go, C++, Java, Python, JavaScript, TypeScript</dd>
+                <dt>Engineering</dt>
+                <dd>Geth, Pebble, Micronaut, React, SQL, Docker, Git</dd>
+              </dl>
+            </div>
+            <div class="education">
+              <h3 class="list-heading">Education</h3>
+              <p>
+                <strong>University of Oregon</strong
+                ><span>Graduate studies · Computer Science</span
+                ><span>2024 — Present</span>
+              </p>
+              <p>
+                <strong>Vellore Institute of Technology</strong
+                ><span>B.Tech. · Computer Science & Engineering</span
+                ><span>2019 — 2023</span>
+              </p>
+            </div>
+            <a
+              class="text-link"
+              href="assets/Shistata-Subedi-Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >The full resume <span class="small">PDF</span>
+              <span aria-hidden="true">↗</span></a
+            >
+          </aside>
+        </div>
+      </section>
+
+      <section
+        class="contact-section container"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <p class="eyebrow">05 / Start a conversation</p>
+        <div class="contact-grid">
+          <div>
+            <h2 id="contact-title">
+              Something interesting<br /><em>on your mind?</em>
+            </h2>
+            <p>
+              I’m happy to talk about systems research, engineering
+              opportunities, and interesting problems worth working on.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <a class="email-link" href="mailto:shiss@uoregon.edu"
+              >shiss@uoregon.edu <span aria-hidden="true">↗</span></a
+            ><button class="text-link copy-button" id="copy-email" hidden>
+              Copy email</button
+            ><span class="copy-status" id="copy-status" role="status"></span>
+            <div class="social-links">
+              <a
+                href="https://github.com/shistuu"
+                target="_blank"
+                rel="noopener"
+                >GitHub ↗</a
+              ><a
+                href="https://www.linkedin.com/in/shistatasubedi"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn ↗</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="container site-footer">
+      <span>© <span id="year">2026</span> Shistata Subedi</span
+      ><span>Built with care. Occasionally with tea.</span
+      ><a href="#home">Back to top ↑</a>
+    </footer>
+  </body>
 </html>
