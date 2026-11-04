@@ -21,6 +21,13 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" />
   <link rel="stylesheet" href="css/portfolio.css" />
+  <script>
+    try {
+      if (localStorage.getItem("theme") === "light") {
+        document.documentElement.dataset.theme = "light";
+      }
+    } catch (e) {}
+  </script>
   <script src="js/portfolio.js" defer></script>
 </head>
 
@@ -33,6 +40,9 @@
       <a href="#experience">Experience</a>
       <a href="#personal">Outside work</a>
       <a href="#contact">Contact</a>
+      <button type="button" class="theme-toggle" id="theme-toggle" hidden>
+        Light mode
+      </button>
     </nav>
   </header>
 
@@ -45,6 +55,7 @@
         <ul class="keywords" aria-label="Research areas">
           <li>Distributed systems</li>
           <li>Security</li>
+          <li>Databases</li>
           <li>Verifiable storage</li>
           <li>Authenticated data structures</li>
           <li>Blockchains</li>
@@ -54,27 +65,20 @@
         <p>
           I’m a PhD student in Computer Science at the
           <strong>University of Oregon</strong>, working with
-          <a href="https://gupta-suyash.github.io/">Prof. Suyash Gupta</a>
-          in Distopia Labs.
+          <a href="https://gupta-suyash.github.io/">Prof. Suyash Gupta</a>. My
+          research is in <strong>distributed systems</strong>,
+          <strong>security</strong>, and <strong>databases</strong>.
         </p>
         <p>
-          Most of my research comes back to one question: when a server tells
-          you something, how do you know it’s true? Especially about the
-          past, like which encryption key your friend had last year, or what
-          your account balance was in March. I work on
-          <strong>verifiable storage systems</strong>, where the server has
-          to send a cryptographic proof along with the answer, so you can
-          check it yourself. Our paper on this, <a href="#smaran">Smaran</a>, is at
-          <strong>SOSP 2026</strong>.
+          I’ve worked on letting clients verify what a database looked like in
+          the past (<a href="#smaran">Smaran</a>, SOSP 2026), keeping
+          cryptographic proofs cheap when data changes often
+          (<a href="#hotswap">HotSwap</a>), and helping overloaded services
+          recover (<a href="#cry-for-help">Cry-for-Help</a>).
         </p>
         <p>
-          I also work on <strong>reliability in distributed systems</strong>:
-          servers that aren’t lying, just drowning, because they got
-          overloaded and can’t climb back out.
-        </p>
-        <p>
-          Before grad school, I was a software engineer at Leapfrog
-          Technology in Kathmandu.
+          Before my PhD, I was a software engineer at Leapfrog Technology in
+          Kathmandu.
         </p>
         <ul class="links">
           <li><a href="mailto:shiss@uoregon.edu">Email</a></li>
@@ -90,7 +94,7 @@
     <aside class="callout" aria-label="Internships">
       <p>
         <strong>I’m looking for an internship.</strong> Distributed systems,
-        storage, or security, at a research lab or on an engineering team.
+        security, or databases, at a research lab or on an engineering team.
         If you’re working on something nearby,
         <a href="mailto:shiss@uoregon.edu">send me an email</a>.
       </p>

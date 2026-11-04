@@ -1,5 +1,28 @@
 "use strict";
 
+// Dark by default; the button switches to light and remembers the choice.
+const themeToggle = document.querySelector("#theme-toggle");
+
+if (themeToggle) {
+  const root = document.documentElement;
+  const label = () => {
+    const light = root.dataset.theme === "light";
+    themeToggle.textContent = light ? "Dark mode" : "Light mode";
+    themeToggle.setAttribute("aria-pressed", String(light));
+  };
+  themeToggle.hidden = false;
+  themeToggle.addEventListener("click", () => {
+    const light = root.dataset.theme !== "light";
+    if (light) root.dataset.theme = "light";
+    else delete root.dataset.theme;
+    try {
+      localStorage.setItem("theme", light ? "light" : "dark");
+    } catch (e) {}
+    label();
+  });
+  label();
+}
+
 // Smaran demo: pick a range of versions and compare proof sizes.
 const versions = document.querySelector("#versions");
 const result = document.querySelector("#range-result");
