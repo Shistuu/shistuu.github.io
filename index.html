@@ -1,632 +1,427 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f8f7f4" />
-    <title>Shistata Subedi — Systems, storage & a little curiosity</title>
-    <meta
-      name="description"
-      content="Shistata Subedi is a graduate researcher at the University of Oregon working on distributed systems, verifiable storage, and service reliability, with production software engineering experience."
-    />
-    <meta property="og:title" content="Shistata Subedi — Systems Researcher" />
-    <meta
-      property="og:description"
-      content="Distributed systems, verifiable storage, and the engineering behind them. Explore my research and selected work."
-    />
-    <meta property="og:type" content="website" />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="css/portfolio.css" />
-    <script src="js/portfolio.js" defer></script>
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <a class="wordmark" href="#home" aria-label="Shistata Subedi, home"
-        >Shistata Subedi<span aria-hidden="true">.</span></a
-      >
-      <button
-        class="menu-toggle"
-        aria-controls="navigation"
-        aria-expanded="false"
-        hidden
-      >
-        Menu <span aria-hidden="true">＋</span>
-      </button>
-      <nav id="navigation" aria-label="Main navigation">
-        <a href="#research">Research</a><a href="#experience">Experience</a
-        ><a href="#recognition">Recognition</a><a href="#about">About</a>
-        <a class="nav-contact" href="#contact"
-          >Let’s talk <span aria-hidden="true">↗</span></a
-        >
-      </nav>
-    </header>
-    <main id="main">
-      <section class="hero container" id="home" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Graduate researcher · University of Oregon</p>
-          <h1 id="hero-title">
-            Big questions.<br />Careful systems.<br /><em>A curious mind.</em>
-          </h1>
-          <p class="hero-intro">
-            I’m Shistata. I build systems that make data verifiable, and study
-            how to keep distributed services reliable when things get
-            complicated. 
-          </p>
-          <div class="actions">
-            <a class="button primary" href="#research"
-              >Explore my work </a
-            ><a
-              class="text-link"
-              href="assets/Shistata-Subedi-Resume.pdf"
-              target="_blank"
-              rel="noopener"
-              >Resume </a
-            >
-          </div>
-        </div>
-        <figure class="portrait">
-          <div class="portrait-frame">
-            <img
-              src="assets/shistata-portrait.png"
-              alt="Shistata Subedi"
-              width="1254"
-              height="1254"
-              fetchpriority="high"
-            />
-          </div>
-          <figcaption>
-            <span>Eugene, Oregon</span
-            ><span>A little curiosity goes a long way.</span>
-          </figcaption>
-        </figure>
-      </section>
-      <div class="research-strip container" aria-label="Research approach">
-        <span>How I work</span>
-        <p>Ask a better question.</p>
-        <span aria-hidden="true">/</span>
-        <p>Build the system.</p>
-        <span aria-hidden="true">/</span>
-        <p>Measure the trade-offs.</p>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shistata Subedi</title>
+  <meta name="description"
+    content="Shistata Subedi is a PhD student at the University of Oregon working on verifiable storage and distributed systems. Co-first author of Smaran (SOSP 2026)." />
+  <link rel="canonical" href="https://shistuu.github.io/" />
+  <meta property="og:title" content="Shistata Subedi" />
+  <meta property="og:description"
+    content="PhD student at the University of Oregon working on verifiable storage and distributed systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shistuu.github.io/" />
+  <meta property="og:image" content="https://shistuu.github.io/assets/shistata-portrait.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" />
+  <link rel="stylesheet" href="css/portfolio.css" />
+  <script src="js/portfolio.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="name" href="#top">Shistata Subedi</a>
+    <nav aria-label="Main navigation">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#personal">Outside work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="intro">
+      <img class="portrait" src="assets/shistata-portrait.jpg" alt="Portrait of Shistata Subedi" width="480"
+        height="480" />
+      <div>
+        <h1>Hi, I’m Shistata.</h1>
+        <ul class="keywords" aria-label="Research areas">
+          <li>Distributed systems</li>
+          <li>Security</li>
+          <li>Verifiable storage</li>
+          <li>Authenticated data structures</li>
+          <li>Blockchains</li>
+          <li>Key transparency</li>
+          <li>Reliability</li>
+        </ul>
+        <p>
+          I’m a PhD student in Computer Science at the
+          <strong>University of Oregon</strong>, working with
+          <a href="https://gupta-suyash.github.io/">Prof. Suyash Gupta</a>
+          in Distopia Labs.
+        </p>
+        <p>
+          Most of my research comes back to one question: when a server tells
+          you something, how do you know it’s true? Especially about the
+          past, like which encryption key your friend had last year, or what
+          your account balance was in March. I work on
+          <strong>verifiable storage systems</strong>, where the server has
+          to send a cryptographic proof along with the answer, so you can
+          check it yourself. Our paper on this, <a href="#smaran">Smaran</a>, is at
+          <strong>SOSP 2026</strong>.
+        </p>
+        <p>
+          I also work on <strong>reliability in distributed systems</strong>:
+          servers that aren’t lying, just drowning, because they got
+          overloaded and can’t climb back out.
+        </p>
+        <p>
+          Before grad school, I was a software engineer at Leapfrog
+          Technology in Kathmandu.
+        </p>
+        <ul class="links">
+          <li><a href="mailto:shiss@uoregon.edu">Email</a></li>
+          <li><a href="assets/Shistata-Subedi-Resume.pdf">Resume (PDF)</a></li>
+          <li><a href="https://github.com/shistuu">GitHub</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/shistatasubedi">LinkedIn</a>
+          </li>
+        </ul>
       </div>
+    </section>
 
-      <section
-        class="section container"
-        id="research"
-        aria-labelledby="research-title"
-      >
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">01 / Selected research & systems</p>
-            <h2 id="research-title">Under the <em>hood.</em></h2>
+    <aside class="callout" aria-label="Internships">
+      <p>
+        <strong>I’m looking for an internship.</strong> Distributed systems,
+        storage, or security, at a research lab or on an engineering team.
+        If you’re working on something nearby,
+        <a href="mailto:shiss@uoregon.edu">send me an email</a>.
+      </p>
+    </aside>
+
+    <section id="research">
+      <h2>Research</h2>
+
+      <article class="project" id="smaran">
+        <h3>Smaran: authenticated time-travel queries - SOSP 2026</h3>
+        <p></p>
+        <p class="authors">
+          Asim Nepal*, <b>Shistata Subedi</b>*, Shubham Mishra*, Suyash Gupta,
+          Aniket Kate, Hein Meling <span>(*equal contribution)</span>
+        </p>
+        <p>
+          <em>Smaran</em> means “remembering” in Sanskrit, which is pretty much
+          the whole job.
+        </p>
+        <p>
+          When Alice texts Bob on WhatsApp, her phone asks the server for
+          Bob’s encryption key. A compromised server could hand her a fake
+          key and quietly read everything. Key transparency guards against
+          this by keeping every key in a public log. But a lot of security
+          questions are about the past: which key did Bob have when Alice sent
+          that message in March? To answer honestly, the server has to show
+          Bob’s whole key history for that period and prove it didn’t skip or
+          change anything.
+        </p>
+        <p>
+          Blockchains have the same problem. If you want your Ethereum
+          account’s history for 2024, today you mostly take a website’s word
+          for it.
+        </p>
+        <p>
+          The usual way to prove these answers is one proof per version. Ask
+          about a longer stretch of time and the proof grows with it. With
+          Smaran, it doesn’t: the proof is the same small size whether you ask
+          about one week or the last ten years.
+        </p>
+
+        <figure class="diagram">
+          <p class="diagram-hint">Pick a start and an end version.</p>
+          <div class="versions" id="versions" role="group" aria-label="Versions of Bob’s key over time">
+            <button type="button">v1</button><button type="button" class="hit">v2</button><button type="button"
+              class="hit">v3</button><button type="button" class="hit">v4</button><button type="button"
+              class="hit">v5</button><button type="button">v6</button><button type="button">v7</button><button
+              type="button">v8</button>
           </div>
+          <div class="bars" aria-hidden="true">
+            <span class="bar-label">One proof per version</span>
+            <span class="bar"><i id="bar-naive"></i></span>
+            <span class="bar-value" id="bar-naive-value"></span>
+            <span class="bar-label">Smaran</span>
+            <span class="bar"><i class="fixed"></i></span>
+            <span class="bar-value">same size</span>
+          </div>
+          <figcaption id="range-result" aria-live="polite"></figcaption>
+        </figure>
+
+        <p>
+          In our experiments, Smaran gets 5.7× the query throughput of CONIKS
+          and OPTIKS for key transparency, and up to 589× the throughput of
+          Merkle trees, Verkle trees, and Cauchyproofs on 2.6 million Ethereum
+          blocks from 2024.
+        </p>
+
+        <details class="abstract">
+          <summary>Abstract</summary>
           <p>
-            Historical data. Cryptographic guarantees.<br />Systems that hold up
-            under pressure.
+            Time-travel queries ask what data looked like at a past time or
+            over an interval. Modern databases support time-travel queries,
+            but this support is insufficient for applications that cannot
+            trust the query server, such as secure messaging and
+            decentralized applications, where clients need proofs that the
+            returned results are correct. Existing approaches either require
+            aggregating evidence from multiple auditors, incur per-step proof
+            costs that scale linearly with history length, or impose massive
+            storage and communication costs.
           </p>
-        </div>
-        <article class="featured-project" id="smaran">
-          <div class="project-content">
-            <div class="project-meta">
-              <span>01 — Smaran</span
-              ><span>Authenticated time-travel queries (SOSP 2026)</span>
-            </div>
-            <h3>The past should<br />come with <em>proof.</em></h3>
-            <p>
-              How did a record change over a time interval? Smaran returns its
-              committed versions with proofs of correctness and completeness—for
-              public-key histories in key transparency and historical account
-              state in decentralized ledgers.
-            </p>
-            <p class="contribution">
-              <strong>My work · Co-first author</strong> I work on authenticated
-              data structures, Ethereum-state tooling, and Go-based evaluation
-              of query performance, proof costs, and storage overhead.
-            </p>
-            <ul class="tags" aria-label="Smaran methods and applications">
-              <li>Segment trees + vector commitments</li>
-              <li>Key transparency</li>
-              <li>Ethereum / Geth</li>
-            </ul>
-            <p style="margin-top: 20px">
-              <a
-                class="text-link"
-                href="https://github.com/distopialabs/Smaran/blob/main/SmaranFullPaper.pdf"
-                target="_blank"
-                rel="noopener"
-                >Read the full paper <span class="small">PDF</span>
-                <span aria-hidden="true">↗</span></a
-              >
-            </p>
-          </div>
-          <figure
-            class="system-visual range-visual"
-            aria-labelledby="range-title"
-          >
-            <div class="visual-heading">
-              <span>SMARAN / HISTORICAL RANGE QUERY</span>
-            </div>
-            <div class="query-label" id="range-title">
-              One record.<br /><em>A whole interval.</em>
-            </div>
-            <div class="range-example">
-              <p class="range-request">Request: record k, interval [t₂, t₅]</p>
-              <div
-                class="range-timeline"
-                aria-label="Committed history of one record: versions v1 to v6. The requested interval includes all four versions v2, v3, v4, and v5."
-              >
-                <div><span>v₁</span><small>t₁</small></div>
-                <div class="in-range"><span>v₂</span><small>t₂</small></div>
-                <div class="in-range"><span>v₃</span><small>t₃</small></div>
-                <div class="in-range"><span>v₄</span><small>t₄</small></div>
-                <div class="in-range"><span>v₅</span><small>t₅</small></div>
-                <div><span>v₆</span><small>t₆</small></div>
-                <p class="range-bracket">
-                  All versions in the requested interval
-                </p>
-              </div>
-              <div class="range-result">
-                <span aria-hidden="true">↓</span>
-                <p>⟨v₂, v₃, v₄, v₅⟩ + compact proofs</p>
-                <small>Verify against the agreed commitment</small>
-              </div>
-            </div>
-            <figcaption class="visual-caption">
-              A public-key history or an account’s historical state.<br />Conceptual
-              range example; not the internal tree layout.
-            </figcaption>
-          </figure>
-          <details class="project-details">
-            <summary>
-              Inside the research <span aria-hidden="true">＋</span>
-            </summary>
-            <div class="detail-grid">
-              <div>
-                <h4>The design</h4>
-                <p>
-                  Segment trees and vector commitments authenticate intervals. A
-                  hierarchical architecture scales with growing histories;
-                  versioned vector commitments avoid redundant state during
-                  unchanged epochs.
-                </p>
-              </div>
-              <div>
-                <h4>The guarantee</h4>
-                <p>
-                  A constant number of fixed-size proofs, independent of range
-                  and history length. Returned values still grow with the range
-                  and require linear validation. Clients verify against history
-                  fixed by a separate agreement layer; availability is outside
-                  Smaran’s scope.
-                </p>
-              </div>
-              <div>
-                <h4>The applications</h4>
-                <p>
-                  Key transparency: audit the public-key versions associated
-                  with an identity over an interval. Ledgers: verify historical
-                  account versions across blocks. The paper evaluates both
-                  settings, including integration with Ethereum’s Geth client.
-                </p>
-              </div>
-            </div>
-          </details>
-        </article>
-
-        <div class="project-grid">
-          <article class="project-card" id="cry-for-help">
-            <div class="project-meta">
-              <span>02 — Cry-for-Help</span><span>Ongoing research</span>
-            </div>
-            <div
-              class="mini-visual reliability-visual"
-              aria-label="Conceptual flow: an overloaded service requests help and redirects fresh work"
-            >
-              <span class="node distressed">Overload</span
-              ><span class="connection" aria-hidden="true">→</span
-              ><span class="node">Ask for help</span
-              ><span class="connection" aria-hidden="true">→</span
-              ><span class="node helper">Redirect</span>
-            </div>
-            <h3>A little help.<br />A more resilient system.</h3>
-            <p>
-              Studying how distributed services can escape self-sustaining
-              overload, where retries and growing queues make recovery harder.
-            </p>
-            <p class="contribution">
-              <strong>My work</strong> Coordination protocols and experiments
-              for distress signaling, helper activation, and fresh-work
-              redirection.
-            </p>
-            <ul class="tags">
-              <li>Distributed reliability</li>
-              <li>Metastability</li>
-              <li>Overload recovery</li>
-            </ul>
-            <details class="project-details">
-              <summary>
-                Research details <span aria-hidden="true">＋</span>
-              </summary>
-              <div class="detail-body">
-                <p>
-                  I investigate an in-network coordination approach in which
-                  distressed servers request help and activate helper nodes over
-                  shared state. Experiments examine queue growth, timeouts,
-                  latency spikes, and recovery under capacity degradation.
-                </p>
-                <p>
-                  Current work also explores OS-assisted distress detection,
-                  combining request backlog and age with useful progress and
-                  execution signals. This is ongoing research, not a
-                  demonstrated recovery guarantee.
-                </p>
-              </div>
-            </details>
-          </article>
-          <article class="project-card" id="minispanner">
-            <div class="project-meta">
-              <span>03 — MiniSpanner</span><span>Systems implementation</span>
-            </div>
-            <div
-              class="mini-visual shards"
-              aria-label="Conceptual diagram of three replicated shards"
-            >
-              <div><span>Shard 01</span><i aria-hidden="true">● ● ●</i></div>
-              <div><span>Shard 02</span><i aria-hidden="true">● ● ●</i></div>
-              <div><span>Shard 03</span><i aria-hidden="true">● ● ●</i></div>
-            </div>
-            <h3>Separate shards.<br />Shared agreement.</h3>
-            <p>
-              A sharded, replicated architecture for Apache ResilientDB,
-              exploring how local consensus and coordination across shards fit
-              together.
-            </p>
-            <p class="contribution">
-              <strong>My work</strong> Implemented replication within shards and
-              transaction coordination across shard leaders.
-            </p>
-            <ul class="tags">
-              <li>ResilientDB</li>
-              <li>PBFT</li>
-              <li>Replication</li>
-            </ul>
-            <details class="project-details">
-              <summary>
-                Implementation details <span aria-hidden="true">＋</span>
-              </summary>
-              <div class="detail-body">
-                <p>
-                  The implementation uses PBFT within each shard and explores
-                  3PC and Proof-of-Execution in coordination across shard
-                  leaders. The project brings together partitioning,
-                  replication, and distributed agreement in a working systems
-                  architecture.
-                </p>
-                <a
-                  class="text-link"
-                  href="https://github.com/nepal80m/incubator-resilientdb/tree/nepal80m/assignment4#"
-                  target="_blank"
-                  rel="noopener"
-                  >View MiniSpanner on GitHub
-                  <span aria-hidden="true">↗</span></a
-                >
-              </div>
-            </details>
-          </article>
-        </div>
-      </section>
-
-      <section
-        class="experience-section"
-        id="experience"
-        aria-labelledby="experience-title"
-      >
-        <div class="container section">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">02 / Beyond the prototype</p>
-              <h2 id="experience-title">
-                Research depth.<br /><em>Engineering instincts.</em>
-              </h2>
-            </div>
-            <p>
-              I like understanding a system, and getting<br />the details right
-              enough to make it work.
-            </p>
-          </div>
-          <div class="experience-list">
-            <article class="experience-row">
-              <div class="role-context">
-                <span class="date">2024 — Present</span
-                ><span>University of Oregon</span>
-              </div>
-              <div>
-                <h3>Graduate Researcher</h3>
-                <p>
-                  I design and evaluate systems for verifiable historical
-                  queries and distributed-service reliability, connecting data
-                  structures and cryptographic mechanisms with implementation
-                  and measurement.
-                </p>
-                <a class="text-link" href="#research"
-                  >Explore the research <span aria-hidden="true">↑</span></a
-                >
-              </div>
-              <span class="role-index" aria-hidden="true">01</span>
-            </article>
-            <article class="experience-row">
-              <div class="role-context">
-                <span class="date">2023 — 2024</span
-                ><span>Leapfrog Technology</span>
-              </div>
-              <div>
-                <h3>Software Engineer</h3>
-                <p>
-                  Built backend APIs and production web interfaces for
-                  scientific and enterprise workflows. Optimized REST APIs
-                  through endpoint refactoring, query tuning, and profiling,
-                  reducing response times by 30%.
-                </p>
-                <div class="industry-work">
-                  <details>
-                    <summary>
-                      Aspen Biosciences <span aria-hidden="true">＋</span>
-                    </summary>
-                    <p>
-                      Built features for a drug-discovery management platform,
-                      integrating project management, experiment tracking,
-                      chemistry workflows, and inventory management.
-                    </p>
-                  </details>
-                  <details>
-                    <summary>
-                      Vyaguta ERP <span aria-hidden="true">＋</span>
-                    </summary>
-                    <p>
-                      Developed backend APIs and responsive employee- and
-                      project-management dashboards. Optimized SQL queries and
-                      REST endpoints to improve performance and reliable data
-                      access.
-                    </p>
-                  </details>
-                </div>
-              </div>
-              <span class="role-index" aria-hidden="true">02</span>
-            </article>
-            <article class="experience-row">
-              <div class="role-context">
-                <span class="date">2024 — Present</span
-                ><span>University of Oregon</span>
-              </div>
-              <div>
-                <h3>Teaching Assistant</h3>
-                <p>
-                  Delivered web programming lectures and hands-on debugging labs
-                  for 140+ students. There’s something satisfying about helping
-                  someone turn “why won’t this work?” into “oh, that makes
-                  sense.”
-                </p>
-              </div>
-              <span class="role-index" aria-hidden="true">03</span>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="section container"
-        id="recognition"
-        aria-labelledby="recognition-title"
-      >
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">03 / Research & recognition</p>
-            <h2 id="recognition-title">
-              Work that goes<br /><em>into the world.</em>
-            </h2>
-          </div>
           <p>
-            Papers, presentations, and the community<br />that makes good
-            research possible.
+            In this paper, we introduce Smaran, an authenticated data
+            structure that enables servers to answer time-travel queries
+            efficiently with a constant number of fixed-size proofs,
+            independent of the query range. Smaran achieves this through a
+            novel integration of segment trees with vector commitments,
+            sidestepping scalability challenges as history grows via a
+            hierarchical architecture, and avoiding redundancy by introducing
+            versioned vector commitments.
           </p>
-        </div>
-        <div class="recognition-grid">
-          <div>
-            <h3 class="list-heading">Research outputs</h3>
-            <!-- Venue and acceptance information below is supplied by the research resume. Confirm final bibliographic details before publishing. -->
-            <article class="publication">
-              <div class="publication-meta">
-                <span>Paper accepted</span><span>SOSP 2026</span>
-              </div>
-              <h4>Smaran: Serving Authenticated Time-Travel Queries</h4>
-              <p>
-                Authenticated historical range queries for key transparency and
-                decentralized ledgers.
-              </p>
-              <a
-                class="text-link"
-                href="https://github.com/distopialabs/Smaran/blob/main/SmaranFullPaper.pdf"
-                target="_blank"
-                rel="noopener"
-                >Read the full paper <span class="small">PDF</span>
-                <span aria-hidden="true">↗</span></a
-              >
-            </article>
-            <article class="publication">
-              <div class="publication-meta">
-                <span>SRC poster accepted</span><span>SOSP 2026</span>
-              </div>
-              <h4>
-                HotSwap: Workload-Adaptive Placement for Authenticated State
-              </h4>
-              <p>
-                Hot/cold placement in KZG sub-vectors reduces unnecessary
-                witness refreshes. Authenticated migration binds both values and
-                locations to one published root; end-to-end evaluation remains
-                ongoing.
-              </p>
-            </article>
-          </div>
-          <div class="recognition-side">
-            <h3 class="list-heading">Selected honors</h3>
-            <div class="award">
-              <span class="date">2024 & 2025</span>
-              <h4>Lokey Award for Graduate Excellence</h4>
-              <p>University of Oregon</p>
-            </div>
-            <div class="award">
-              <span class="date">2025</span>
-              <h4>Frank Vignola Microgrant</h4>
-              <p>Eugene–Kathmandu Sister City Association</p>
-            </div>
-            <div class="award">
-              <span class="date">2019–2023</span>
-              <h4>COMPEX Scholarship</h4>
-              <p>Full undergraduate scholarship · Indian Embassy</p>
-            </div>
-            <h3 class="list-heading service-heading">Academic service</h3>
-            <ul class="service-list">
-              <li>
-                <strong>Artifact Evaluation Committee</strong
-                ><span>Middleware 2025</span>
-              </li>
-              <li><strong>Shadow Reviewer</strong><span>ACM IMC 2025</span></li>
-              <li>
-                <strong>Reviewer</strong
-                ><span
-                  >IEEE Transactions on Dependable and Secure Computing</span
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        </details>
 
-      <section class="about-section" id="about" aria-labelledby="about-title">
-        <div class="container section about-grid">
-          <div>
-            <p class="eyebrow">04 / The person behind the proofs</p>
-            <h2 id="about-title">
-              Serious about systems.<br /><em>Not always serious.</em>
-            </h2>
-            <p class="about-lead">
-              I’m a graduate researcher at the University of Oregon, working
-              with
-              <a
-                href="https://gupta-suyash.github.io/"
-                target="_blank"
-                rel="noopener"
-                >Prof. Suyash Gupta</a
-              >
-              on distributed systems and verifiable storage.
-            </p>
-            <p>
-              Before graduate school, I worked as a software engineer at
-              Leapfrog Technology. That experience still shapes how I approach
-              research: understand the problem, build something concrete, and
-              look closely at where it breaks.
-            </p>
-            <p>
-              Outside the terminal, I enjoy cooking, traveling, exploring food
-              cultures, and making things by hand. Apparently, debugging and DIY
-              both involve wondering where that extra piece came from.
-            </p>
-            <div class="personal-note">
-              <span class="eyebrow"
-                >A small, non-peer-reviewed observation</span
-              >
-              <p id="aside-text" aria-live="polite">
-                My most reliable distributed system is a group chat deciding
-                where to eat. Just kidding. It never reaches consensus.
-              </p>
-              <button class="text-link aside-button" id="new-aside" hidden>
-                One more thought <span aria-hidden="true">↻</span>
-              </button>
-            </div>
-          </div>
-          <aside class="about-sidebar">
-            <div>
-              <h3 class="list-heading">A few things I work with</h3>
-              <dl class="toolkit">
-                <dt>Systems</dt>
-                <dd>
-                  Distributed systems, authenticated data structures, verifiable
-                  storage, replication
-                </dd>
-                <dt>Implementation</dt>
-                <dd>Go, C++, Java, Python, JavaScript, TypeScript</dd>
-                <dt>Engineering</dt>
-                <dd>Geth, Pebble, Micronaut, React, SQL, Docker, Git</dd>
-              </dl>
-            </div>
-            <div class="education">
-              <h3 class="list-heading">Education</h3>
-              <p>
-                <strong>University of Oregon</strong
-                ><span>Graduate studies · Computer Science</span
-                ><span>2024 — Present</span>
-              </p>
-              <p>
-                <strong>Vellore Institute of Technology</strong
-                ><span>B.Tech. · Computer Science & Engineering</span
-                ><span>2019 — 2023</span>
-              </p>
-            </div>
-            <a
-              class="text-link"
-              href="assets/Shistata-Subedi-Resume.pdf"
-              target="_blank"
-              rel="noopener"
-              >The full resume <span class="small">PDF</span>
-              <span aria-hidden="true">↗</span></a
-            >
-          </aside>
-        </div>
-      </section>
+        <p class="project-links">
+          <a href="https://dl.acm.org/doi/10.1145/3830418.3843882">Paper</a>
+          <a href="https://github.com/distopialabs/Smaran">Code</a>
+          <a href="https://doi.org/10.5281/zenodo.21351393">Artifact</a>
+        </p>
+      </article>
 
-      <section
-        class="contact-section container"
-        id="contact"
-        aria-labelledby="contact-title"
-      >
-        <p class="eyebrow">05 / Start a conversation</p>
-        <div class="contact-grid">
+      <h3 class="small-heading">What I’m working on now</h3>
+
+      <article class="project" id="hotswap">
+        <h3>HotSwap</h3>
+        <p class="meta">
+          3rd place,
+          <a href="https://src.acm.org/winners/2027">ACM Student Research Competition</a>
+          at SOSP 2026
+        </p>
+        <p>
+          In systems like Smaran, every stored value has a small proof, and
+          values are stored in groups. Change one value and every proof in
+          its group has to be recomputed. That would be fine if updates were
+          spread out evenly. They aren’t. On Ethereum, a handful of accounts
+          (exchanges, popular contracts) change constantly while most sit
+          untouched for months, so a few busy values can keep the server
+          recomputing proofs all day. Click around:
+        </p>
+
+        <figure class="diagram">
+          <div class="groups" id="groups"></div>
+          <div class="demo-actions">
+            <button type="button" class="demo-button" id="burst">
+              Update the busy ones
+            </button>
+            <button type="button" class="demo-button" id="reset">Reset</button>
+          </div>
+          <figcaption id="groups-result" aria-live="polite"></figcaption>
+        </figure>
+
+        <p>
+          I’m working on keeping that cost down without weakening anything a
+          client can check. More soon, hopefully with graphs.
+        </p>
+      </article>
+
+      <article class="project" id="cry-for-help">
+        <h3>Cry-for-Help</h3>
+        <p>
+          Some outages don’t end when their cause does. A traffic spike or a
+          slow database pushes a service into overload. Requests time out,
+          clients retry, and the retries become more load. The spike is long
+          gone, but the service is still stuck, mostly because of its own
+          retries. These are called <em>metastable failures</em>, and today
+          the fix is usually someone getting paged at 3 a.m.
+        </p>
+        <p>
+          I want to know whether a service can tell it’s in this state and
+          get itself out, so nobody has to wake up.
+        </p>
+      </article>
+
+      <h3 class="small-heading">Earlier projects</h3>
+
+      <article class="project small" id="minispanner">
+        <div class="project-head">
+          <h3>MiniSpanner: a sharded, replicated database</h3>
+          <p class="meta">2025 · Apache ResilientDB</p>
+        </div>
+        <p>
+          Data is split into shards, and each shard is copied across several
+          machines that agree on updates using PBFT, so things keep working
+          even if some machines misbehave. We implemented the replication
+          inside each shard and the coordination of transactions that span
+          shards.
+          <a href="https://github.com/Shistuu/minispanner">Code</a>
+        </p>
+      </article>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="pubs">
+        <li>
+          <a class="pub-title" href="https://dl.acm.org/doi/10.1145/3830418.3843882">Smaran: Serving Authenticated
+            Time-Travel Queries</a>
+          <span>
+            Asim Nepal*, <b>Shistata Subedi</b>*, Shubham Mishra*, Suyash
+            Gupta, Aniket Kate, Hein Meling
+          </span>
+          <span class="venue">SOSP 2026 · *equal contribution</span>
+        </li>
+        <li>
+          <a class="pub-title" href="https://dl.acm.org/doi/abs/10.1145/3721464.3777435">Samurai: Slash Your
+            Decentralized Storage</a>
+          <span><b>Shistata Subedi</b></span>
+          <span class="venue">Middleware 2025, Doctoral Symposium</span>
+          <span class="pub-note">
+            Where Smaran started: checking old Ethereum balances without
+            trusting a block explorer.
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="timeline">
+        <li>
+          <span class="when">2024 – now</span>
           <div>
-            <h2 id="contact-title">
-              Something interesting<br /><em>on your mind?</em>
-            </h2>
+            <h3>Graduate Researcher, University of Oregon</h3>
+            <p>Smaran, HotSwap, and Cry-for-Help.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2024 – 2025</span>
+          <div>
+            <h3>Teaching Assistant, University of Oregon</h3>
             <p>
-              I’m happy to talk about systems research, engineering
-              opportunities, and interesting problems worth working on.
+              Taught web programming lectures and ran debugging labs for
+              140+ students.
             </p>
           </div>
-          <div class="contact-actions">
-            <a class="email-link" href="mailto:shiss@uoregon.edu"
-              >shiss@uoregon.edu <span aria-hidden="true">↗</span></a
-            ><button class="text-link copy-button" id="copy-email" hidden>
-              Copy email</button
-            ><span class="copy-status" id="copy-status" role="status"></span>
-            <div class="social-links">
-              <a
-                href="https://github.com/shistuu"
-                target="_blank"
-                rel="noopener"
-                >GitHub ↗</a
-              ><a
-                href="https://www.linkedin.com/in/shistatasubedi"
-                target="_blank"
-                rel="noopener"
-                >LinkedIn ↗</a
-              >
-            </div>
+        </li>
+        <li>
+          <span class="when">2023 – 2024</span>
+          <div>
+            <h3>Software Engineer, Leapfrog Technology, Kathmandu</h3>
+            <p>
+              Built backend APIs (Java, Micronaut) and dashboards for client
+              products, including a drug-discovery platform for Aspen
+              Biosciences and the Vyaguta ERP system. Made API responses about
+              30% faster by reworking endpoints and SQL queries.
+            </p>
           </div>
+        </li>
+      </ul>
+      <p class="tools">
+        <strong>Tools I use most:</strong> Go, C++, Rust, Python, Java,
+        TypeScript, Geth, Pebble, Docker, SQL, Linux.
+      </p>
+
+      <div class="two-col">
+        <div>
+          <h3 class="small-heading">Awards</h3>
+          <ul class="plain">
+            <li>
+              3rd place (graduate),
+              <a href="https://src.acm.org/winners/2027">ACM Student Research Competition</a>
+              at SOSP, for HotSwap <span class="when">2026</span>
+            </li>
+            <li>
+              Lokey Award for Graduate Excellence, University of Oregon
+              <span class="when">2024 – 2025</span>
+            </li>
+            <li>
+              Frank Vignola Microgrant, Eugene–Kathmandu Sister City
+              Association <span class="when">2025</span>
+            </li>
+            <li>
+              COMPEX full undergraduate scholarship, Embassy of India
+              <span class="when">2019 – 2023</span>
+            </li>
+          </ul>
         </div>
-      </section>
-    </main>
-    <footer class="container site-footer">
-      <span>© <span id="year">2026</span> Shistata Subedi</span
-      ><span>Built with care. Occasionally with tea.</span
-      ><a href="#home">Back to top ↑</a>
-    </footer>
-  </body>
+        <div>
+          <h3 class="small-heading">Education</h3>
+          <ul class="plain">
+            <li>
+              University of Oregon, PhD student in Computer Science
+              <span class="when">2024 – now</span>
+            </li>
+            <li>
+              Vellore Institute of Technology, B.Tech. in Computer Science
+              <span class="when">2019 – 2023</span>
+            </li>
+          </ul>
+          <h3 class="small-heading spaced">Reviewing</h3>
+          <ul class="plain">
+            <li>Reviewer, IEEE Transactions on Dependable and Secure Computing</li>
+            <li>Shadow reviewer, IMC <span class="when">2025</span></li>
+            <li>
+              Artifact evaluation committee, Middleware
+              <span class="when">2025</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="personal">
+      <h2>Outside work</h2>
+
+      <p>
+        I grew up in Nepal, where momo is practically a religion. Then I
+        moved to Vellore, Tamil Nadu, for college and got my first proper
+        culture shock. New language, new food, new everything. My Tamil
+        vocabulary was limited, and my confidence in using it was wildly
+        disproportionate. It took me a while to settle in. Dosa helped.
+        A lot. Four years later, I left with a degree, a serious dosa
+        addiction, and a lifelong appreciation for coconut chutney.
+        No regrets.
+      </p>
+
+      <p>
+        After college, I moved back to Kathmandu to work at Leapfrog,
+        which gave me four years' worth of missed momo and laphing
+        (a cold, spicy Tibetan noodle dish) to catch up on.
+        I took that responsibility seriously.
+      </p>
+
+      <p>
+        Now I'm in Eugene, Oregon. The mountains are beautiful, the
+        trees are everywhere, and the momo situation is deeply concerning.
+        I've been compensating with unreasonable amounts of tea.
+        If you're ever visiting Kathmandu, please ask me where to eat.
+        I have opinions.
+      </p>
+
+      <p>
+        Outside of work, I like traveling, trying new food, and making
+        things by hand. I'm generally happy anywhere there's something
+        new to explore or something good to eat.
+      </p>
+
+      <p>
+        My research involves proving things about the past. How many
+        momo I ate last week is one historical record I'd prefer to
+        leave unverified.
+      </p>
+    </section>
+
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email is the best way to reach me:
+        <a href="mailto:shiss@uoregon.edu">shiss@uoregon.edu</a>. I’m happy
+        to talk about internships, research, or anything on this page.
+      </p>
+    </section>
+  </main>
+</body>
+
 </html>
